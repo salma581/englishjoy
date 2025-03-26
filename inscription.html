@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Comenjoy School</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <h1>Comenjoy School</h1>
+            <p>Inscription aux cours d'anglais</p>
+        </div>
+        <div class="banner"></div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="index.html#about">À propos</a></li>
+            <li><a href="index.html#classes">Nos Classes</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <main class="form-container">
+        <section class="form-section">
+            <h2>Formulaire d'Inscription</h2>
+            <p>Remplissez ce formulaire pour inscrire votre enfant à nos cours d'anglais. Nous vous contacterons dans les 48h pour confirmer l'inscription.</p>
+            
+            <form id="registrationForm" action="https://formspree.io/f/votre-email@exemple.com" method="POST"></form>
+                <div class="form-group">
+                    <h3>Informations du Parent</h3>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="parentFirstName">Prénom *</label>
+                            <input type="text" id="parentFirstName" name="parentFirstName" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="parentLastName">Nom *</label>
+                            <input type="text" id="parentLastName" name="parentLastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="parentEmail">Email *</label>
+                            <input type="email" id="parentEmail" name="parentEmail" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="parentPhone">Téléphone *</label>
+                            <input type="tel" id="parentPhone" name="parentPhone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="parentAddress">Adresse *</label>
+                        <input type="text" id="parentAddress" name="parentAddress" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Informations de l'Enfant</h3>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="childFirstName">Prénom *</label>
+                            <input type="text" id="childFirstName" name="childFirstName" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="childLastName">Nom *</label>
+                            <input type="text" id="childLastName" name="childLastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="childBirthdate">Date de naissance *</label>
+                            <input type="date" id="childBirthdate" name="childBirthdate" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="childAge">Âge *</label>
+                            <input type="number" id="childAge" name="childAge" min="2" max="12" required>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="childClass">Groupe souhaité *</label>
+                        <select id="childClass" name="childClass" required>
+                            <option value="">-- Sélectionnez un groupe --</option>
+                            <option value="toddlers">Toddlers (2-3 ans)</option>
+                            <option value="pre-school">Pre-School (4-5 ans)</option>
+                            <option value="kids">Kids (6-8 ans)</option>
+                            <option value="juniors">Juniors (9-12 ans)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="childInfo">Informations supplémentaires (allergies, besoins particuliers, etc.)</label>
+                        <textarea id="childInfo" name="childInfo" rows="3"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Moyen de Connaissance</h3>
+                    <div class="checkbox-group">
+                        <p>Comment avez-vous connu notre école ? *</p>
+                        <label><input type="radio" name="discovery" value="reseaux" required> Réseaux sociaux</label>
+                        <label><input type="radio" name="discovery" value="recommandation"> Recommandation</label>
+                        <label><input type="radio" name="discovery" value="recherche"> Recherche internet</label>
+                        <label><input type="radio" name="discovery" value="autre"> Autre</label>
+                    </div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" name="terms" required>
+                        J'accepte les <a href="#">conditions générales</a> et la politique de confidentialité *
+                    </label>
+                    <label>
+                        <input type="checkbox" name="newsletter">
+                        Je souhaite recevoir la newsletter et les informations sur nos activités
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn submit-btn">Envoyer l'Inscription</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Rue de l'Éducation, 75000 Paris</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@littleenglishschool.fr</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lundi-Vendredi: 9h-18h</p>
+                <p>Samedi: 9h-12h</p>
+                <p>Cours: Mercredi et vacances scolaires</p>
+            </div>
+            <div class="footer-section">
+                <h3>Réseaux sociaux</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Little English School. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
