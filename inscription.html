@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - Comenjoy School</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
+    <header class="header-container">
         <div class="logo-container">
-            <h1>Comenjoy School</h1>
-            <p>Inscription aux cours d'anglais</p>
+            <img src="./images/logo.png" alt="placeholder"/>
+            </div>
+        <div class="banner">
+            <div class="banner-content">
+                <h1>Englishjoy</h1>
+                <p>English Inscription</p>
+            </div>
         </div>
-        <div class="banner"></div>
+    </header>
+            </div>
+        </div>
     </header>
 
     <nav>
@@ -34,118 +43,106 @@
             <h2>Formulaire d'Inscription</h2>
             <p>Remplissez ce formulaire pour inscrire votre enfant à nos cours d'anglais. Nous vous contacterons dans les 48h pour confirmer l'inscription.</p>
             
-            <form id="registrationForm" action="https://formspree.io/f/votre-email@exemple.com" method="POST"></form>
-                <div class="form-group">
-                    <h3>Informations du Parent</h3>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="parentFirstName">Prénom *</label>
-                            <input type="text" id="parentFirstName" name="parentFirstName" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="parentLastName">Nom *</label>
-                            <input type="text" id="parentLastName" name="parentLastName" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="parentEmail">Email *</label>
-                            <input type="email" id="parentEmail" name="parentEmail" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="parentPhone">Téléphone *</label>
-                            <input type="tel" id="parentPhone" name="parentPhone" required>
-                        </div>
-                    </div>
-                    
-                    <div class="input-group">
-                        <label for="parentAddress">Adresse *</label>
-                        <input type="text" id="parentAddress" name="parentAddress" required>
-                    </div>
-                </div>
+            <form id="registrationForm" action="https://formspree.io/f/mdkelnlk" method="POST">
+                <!-- Champ caché pour personnaliser l'objet du mail -->
+                <input type="hidden" name="_subject" value="Nouvelle inscription - Englishjoy">
+                <input type="hidden" name="_language" value="fr">
                 
                 <div class="form-group">
-                    <h3>Informations de l'Enfant</h3>
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="childFirstName">Prénom *</label>
-                            <input type="text" id="childFirstName" name="childFirstName" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="childLastName">Nom *</label>
-                            <input type="text" id="childLastName" name="childLastName" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="input-group">
-                            <label for="childBirthdate">Date de naissance *</label>
-                            <input type="date" id="childBirthdate" name="childBirthdate" required>
-                        </div>
-                        <div class="input-group">
-                            <label for="childAge">Âge *</label>
-                            <input type="number" id="childAge" name="childAge" min="2" max="12" required>
-                        </div>
-                    </div>
-                    
+                  <h3>Informations du Parent</h3>
+                  <div class="form-row">
                     <div class="input-group">
-                        <label for="childClass">Groupe souhaité *</label>
-                        <select id="childClass" name="childClass" required>
-                            <option value="">-- Sélectionnez un groupe --</option>
-                            <option value="toddlers">Toddlers (2-3 ans)</option>
-                            <option value="pre-school">Pre-School (4-5 ans)</option>
-                            <option value="kids">Kids (6-8 ans)</option>
-                            <option value="juniors">Juniors (9-12 ans)</option>
-                        </select>
+                      <label for="parentFirstName">Prénom *</label>
+                      <input type="text" id="parentFirstName" name="parentFirstName" required
+                             pattern="[A-Za-zÀ-ÿ\s]{2,}" 
+                             title="Minimum 2 caractères alphabétiques">
                     </div>
-                    
                     <div class="input-group">
-                        <label for="childInfo">Informations supplémentaires (allergies, besoins particuliers, etc.)</label>
-                        <textarea id="childInfo" name="childInfo" rows="3"></textarea>
+                      <label for="parentLastName">Nom *</label>
+                      <input type="text" id="parentLastName" name="parentLastName" required
+                             pattern="[A-Za-zÀ-ÿ\s]{2,}"
+                             title="Minimum 2 caractères alphabétiques">
                     </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="input-group">
+                      <label for="parentEmail">Email *</label>
+                      <input type="email" id="parentEmail" name="parentEmail" required
+                             placeholder="exemple@domaine.com">
+                    </div>
+                    <div class="input-group">
+                      <label for="parentPhone">Téléphone *</label>
+                      <input type="tel" id="parentPhone" name="parentPhone" required
+                             pattern="[0-9]{10}" 
+                             placeholder="0612345678">
+                    </div>
+                  </div>
                 </div>
-                
+              
                 <div class="form-group">
-                    <h3>Moyen de Connaissance</h3>
-                    <div class="checkbox-group">
-                        <p>Comment avez-vous connu notre école ? *</p>
-                        <label><input type="radio" name="discovery" value="reseaux" required> Réseaux sociaux</label>
-                        <label><input type="radio" name="discovery" value="recommandation"> Recommandation</label>
-                        <label><input type="radio" name="discovery" value="recherche"> Recherche internet</label>
-                        <label><input type="radio" name="discovery" value="autre"> Autre</label>
+                  <h3>Informations de l'Enfant</h3>
+                  <div class="form-row">
+                    <div class="input-group">
+                      <label for="childName">Prénom de l'enfant *</label>
+                      <input type="text" id="childName" name="childName" required>
                     </div>
+                    <div class="input-group">
+                      <label for="childAge">Âge *</label>
+                      <input type="number" id="childAge" name="childAge" 
+                             min="2" max="12" required>
+                    </div>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="childClass">Groupe souhaité *</label>
+                    <select id="childClass" name="childClass" required>
+                      <option value="">-- Sélectionnez --</option>
+                      <option value="Toddlers (2-3 ans)">Toddlers (2-3 ans)</option>
+                      <option value="Pre-School (4-5 ans)">Pre-School (4-5 ans)</option>
+                      <option value="Kids (6-8 ans)">Kids (6-8 ans)</option>
+                      <option value="Juniors (9-12 ans)">Juniors (9-12 ans)</option>
+                    </select>
+                  </div>
                 </div>
-                
+              
                 <div class="form-group checkbox-group">
-                    <label>
-                        <input type="checkbox" name="terms" required>
-                        J'accepte les <a href="#">conditions générales</a> et la politique de confidentialité *
-                    </label>
-                    <label>
-                        <input type="checkbox" name="newsletter">
-                        Je souhaite recevoir la newsletter et les informations sur nos activités
-                    </label>
+                  <label>
+                    <input type="checkbox" name="terms" required>
+                    J'accepte les <a href="#">conditions générales</a> *
+                  </label>
+                  <label>
+                    <input type="checkbox" name="newsletter">
+                    Je souhaite recevoir la newsletter
+                  </label>
                 </div>
+              
+                <button type="submit" class="submit-btn">
+                  <span class="btn-text">Envoyer l'inscription</span>
+                  <span class="loading-icon" style="display:none;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </span>
+                </button>
                 
-                <button type="submit" class="btn submit-btn">Envoyer l'Inscription</button>
-            </form>
+                <!-- Feedback après soumission -->
+                <div id="formFeedback" style="display:none;"></div>
+              </form>
         </section>
     </main>
 
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Rue de l'Éducation, 75000 Paris</p>
-                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
-                <p><i class="fas fa-envelope"></i> contact@littleenglishschool.fr</p>
+                <p><i class="fas fa-map-marker-alt"></i> 290 Rue de la Garenne,92000 Nanterre, emplacement vive les groues</p>
+                <p><i class="fas fa-phone"></i> 0780718160</p>
+                <p><i class="fas fa-envelope"></i> Englishjoy92@gmail.com</p>
             </div>
             <div class="footer-section">
                 <h3>Horaires</h3>
-                <p>Lundi-Vendredi: 9h-18h</p>
-                <p>Samedi: 9h-12h</p>
-                <p>Cours: Mercredi et vacances scolaires</p>
+                <p>mercredi: 10h-19h</p>
+                <p>Samedi: 10h-15h</p>
+                <p>Cours: Mercredi, samedi et vacances scolaires</p>
             </div>
             <div class="footer-section">
                 <h3>Réseaux sociaux</h3>
@@ -157,10 +154,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 Little English School. Tous droits réservés.</p>
+            <p>&copy; 2023 Englishjoy School. Tous droits réservés.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/auth.js"></script>
 </body>
 </html>

@@ -69,33 +69,26 @@ img {
     transform: translateY(-2px);
 }
 
-.submit-btn {
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    margin-top: 2rem;
-}
-
 /* Header */
-/* Styles pour le header */
 .header-container {
     position: relative;
     width: 100%;
     margin-bottom: 2rem;
 }
+
 .logo-container {
     width: 150px;
     margin: 0 auto;
-    
-    img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .banner {
-    height: 300px; /* Ajustez selon vos besoins */
+    height: 300px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
                      url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
@@ -121,21 +114,6 @@ img {
 .banner p {
     font-size: 1.5rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-/* Version mobile */
-@media (max-width: 768px) {
-    .banner {
-        height: 200px;
-    }
-    
-    .banner h1 {
-        font-size: 2rem;
-    }
-    
-    .banner p {
-        font-size: 1.2rem;
-    }
 }
 
 /* Navigation */
@@ -291,106 +269,162 @@ section {
     left: 0;
     font-size: 1.2rem;
 }
-
-/* Formulaire d'inscription */
-.form-container {
-    max-width: 1000px;
+/* Section Profil Enseignant */
+.teacher-profile {
+    background-color: #FFF8F0; /* Fond légèrement orangé */
+    padding: 3rem 0;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .teacher-profile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(230,92,14,0.05) 0%, rgba(255,255,255,0) 50%);
+    z-index: 0;
+  }
+  
+  .teacher-container {
+    max-width: 1200px;
     margin: 0 auto;
-}
-
-.form-section {
-    background-color: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.form-section h2 {
-    color: var(--primary-dark);
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.form-section p {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-.form-group {
-    margin-bottom: 2rem;
-}
-
-.form-group h3 {
-    color: var(--primary-dark);
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--primary-light);
-}
-
-.form-row {
+    padding: 0 2rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.form-row .input-group {
-    flex: 1 1 calc(50% - 1.5rem);
-    min-width: 250px;
-}
-
-.input-group {
-    margin-bottom: 1rem;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.input-group input,
-.input-group select,
-.input-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid var(--medium-gray);
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-.input-group input:focus,
-.input-group select:focus,
-.input-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(255, 165, 0, 0.2);
-}
-
-.checkbox-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.checkbox-group label {
-    display: flex;
     align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-}
-
-.checkbox-group input[type="checkbox"],
-.checkbox-group input[type="radio"] {
-    width: auto;
-}
-
-.checkbox-group p {
-    text-align: left;
-    margin-bottom: 0.5rem;
+    gap: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Photo de profil */
+  .teacher-photo {
+    flex: 1 1 300px;
+    position: relative;
+    perspective: 1000px;
+  }
+  
+  .profile-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color); /* Utilise votre variable orange */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transform: rotateY(0deg);
+    transition: all 0.5s ease;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+  
+  .teacher-photo:hover .profile-image {
+    transform: rotateY(15deg);
+    box-shadow: 0 15px 40px rgba(230,92,14,0.2);
+  }
+  
+  /* Bio */
+  .teacher-bio {
+    flex: 2 1 500px;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .teacher-bio h2 {
+    color: var(--primary-color); /* Orange */
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .teacher-bio h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+  }
+  
+  .teacher-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
     font-weight: 600;
-}
+  }
+  
+  .teacher-desc {
+    line-height: 1.8;
+  }
+  
+  .teacher-desc p {
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-left: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  .teacher-desc p:nth-child(1) { animation-delay: 0.3s; }
+  .teacher-desc p:nth-child(2) { animation-delay: 0.6s; }
+  .teacher-desc p:nth-child(3) { animation-delay: 0.9s; }
+  
+  .teacher-desc p::before {
+    content: "•";
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .teacher-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
+    
+    .teacher-bio h2::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .teacher-desc p {
+      padding-left: 0;
+      text-align: left;
+    }
+    
+    .teacher-desc p::before {
+      display: none;
+    }
+    
+    .profile-image {
+      max-width: 250px;
+    }
+  }
 
 /* Footer */
 footer {
@@ -456,6 +490,18 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .banner {
+        height: 200px;
+    }
+    
+    .banner h1 {
+        font-size: 2rem;
+    }
+    
+    .banner p {
+        font-size: 1.2rem;
+    }
+
     nav ul {
         display: none;
         flex-direction: column;
@@ -487,10 +533,6 @@ footer {
     .about-content, .about-images {
         flex: 1 1 100%;
     }
-
-    .form-row .input-group {
-        flex: 1 1 100%;
-    }
 }
 
 /* Animations */
@@ -499,7 +541,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.about-section, .classes-section, .form-section {
+.about-section, .classes-section {
     animation: fadeIn 0.8s ease-out;
 }
 
