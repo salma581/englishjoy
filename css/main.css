@@ -1,13 +1,16 @@
 /* Variables de couleur */
+
 :root {
-    --primary-color: #e65c0e; /* Orange clair */
-    --primary-dark: #F1642F;
-    --primary-light: #FFB733;
-    --secondary-color: #4A90E2;
+    --primary-color: #D32F2F; /* Rouge vif */
+    --primary-dark: #0D47A1; /* bleu foncé */
+    --primary-light: #FF6659; /* Rouge clair */
+    --secondary-color: #1976D2; /* Bleu vif */
+    --secondary-dark:  #B71C1C; /* rouge foncé */
+    --secondary-light: #63A4FF; /* Bleu clair */
     --text-color: #333333;
     --light-gray: #F5F5F5;
     --medium-gray: #E0E0E0;
-    --dark-gray: #757575;
+    --dark-gray: #353535;
     --white: #FFFFFF;
     --black: #000000;
 }
@@ -179,30 +182,154 @@ section {
     margin-bottom: 3rem;
 }
 
-/* Section À propos */
+/* Styles pour la section about */
 .about-section {
     display: flex;
-    flex-wrap: wrap;
     gap: 2rem;
-    align-items: center;
-    margin-bottom: 4rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.about-content {
-    flex: 1 1 60%;
-    min-width: 300px;
+.special-offer {
+    background: #fff;
+    border: 2px dashed #D32F2F;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    position: relative;
 }
 
-.about-images {
-    flex: 1 1 35%;
+.offer-header {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.offer-badge {
+    background-color: #D32F2F;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.offer-list {
+    list-style: none;
+    padding: 0;
+}
+
+.offer-list li {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
     gap: 1rem;
 }
 
-.about-images img {
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.discount-badge {
+    background-color: #D32F2F;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.offer-text {
+    font-size: 1.1rem;
+}
+
+.offer-note {
+    font-size: 0.8rem;
+    color: #757575;
+    margin-left: 0.5rem;
+    font-style: italic;
+}
+
+.cta-button {
+    display: block; /* Changement à block pour le centrage */
+    width: 80%; /* Largeur relative */
+    max-width: 250px; /* Largeur maximale */
+    margin: 1rem auto 0; /* Centrage automatique horizontal */
+    background-color: #1976D2;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none; /* Important pour les liens */
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.cta-button:hover {
+    background-color: #0D47A1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+}
+
+/* Animation au clic */
+.cta-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-box {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.benefit-icon {
+    color: #D32F2F;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.about-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 /* Section Classes - Version améliorée */
