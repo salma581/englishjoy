@@ -138,7 +138,7 @@ img {
 .banner {
     height: 300px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                      url('banner1.png'); /* Extension ajoutée */
+                       url('../images/banner.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Évite la répétition */
@@ -896,6 +896,17 @@ footer::before {
         padding: var(--space-sm);
     }
 
+    /* Correction bouton offre spéciale */
+    .special-offer .cta-button {
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: var(--space-sm);
+        white-space: normal;
+    }
+      h3{
+        margin-top: 10px;
+      }
     /* Pricing Section */
     .pricing-grid {
         grid-template-columns: 1fr;
@@ -903,6 +914,19 @@ footer::before {
 
     .pricing-card {
         padding: var(--space-md);
+    }
+
+    /* Alignement étoile jaune */
+    .pricing-card.featured .price {
+       display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+    }
+    
+    .pricing-card.featured .star-icon {
+        position: static;
+        transform: none;
+        margin-left: var(--space-xs);
     }
 
     /* Teacher Profile */
@@ -917,6 +941,20 @@ footer::before {
 
     .teacher-bio {
         text-align: left;
+    }
+
+    /* Footer ajustements */
+    footer {
+        padding: var(--space-md) 0;
+    }
+    
+    .footer-content {
+        padding: 0 var(--space-md);
+    }
+    
+    .footer-bottom {
+        margin-top: var(--space-md);
+        padding-top: var(--space-md);
     }
 }
 
@@ -950,9 +988,10 @@ footer::before {
         font-size: var(--text-sm);
     }
     
-    .cta-button {
+    .special-offer .cta-button {
         width: 100%;
-        max-width: none;
+        padding: var(--space-xs) var(--space-sm);
+        font-size: var(--text-md);
     }
     
     /* Teacher Profile */
@@ -966,5 +1005,17 @@ footer::before {
     
     .teacher-desc p::before {
         font-size: var(--text-md);
+    }
+    
+    /* Footer mobile */
+    .footer-links {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-sm);
     }
 }
