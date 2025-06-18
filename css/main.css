@@ -67,7 +67,7 @@ body {
 
 h1, h2, h3, h4 {
     margin-bottom: var(--space-sm);
-    line-height: 1.2;
+    /* line-height: 1.2; */
 }
 
 p {
@@ -904,9 +904,7 @@ footer::before {
         padding: var(--space-sm);
         white-space: normal;
     }
-      h3{
-        margin-top: 10px;
-      }
+      
     /* Pricing Section */
     .pricing-grid {
         grid-template-columns: 1fr;

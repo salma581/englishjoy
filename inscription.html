@@ -6,14 +6,13 @@
     <title>Inscription - Comenjoy School</title>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/auth.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="header-container">
         <div class="logo-container">
-            <img src="./images/logo.png" alt="placeholder"/>
-            </div>
+            <img src="./images/logo.png" alt="Englishjoy Logo"/>
+        </div>
         <div class="banner">
             <div class="banner-content">
                 <h1>Englishjoy</h1>
@@ -21,15 +20,10 @@
             </div>
         </div>
     </header>
-            </div>
-        </div>
-    </header>
 
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
-            <li><a href="index.html#about">À propos</a></li>
-            <li><a href="index.html#classes">Nos Classes</a></li>
             <li><a href="inscription.html">Inscription</a></li>
             <li><a href="index.html#contact">Contact</a></li>
         </ul>
@@ -38,13 +32,12 @@
         </div>
     </nav>
 
-    <main class="form-container">
+     <main class="form-container">
         <section class="form-section">
             <h2>Formulaire d'Inscription</h2>
             <p>Remplissez ce formulaire pour inscrire votre enfant à nos cours d'anglais. Nous vous contacterons dans les 48h pour confirmer l'inscription.</p>
             
             <form id="registrationForm" action="https://formspree.io/f/mdkelnlk" method="POST">
-                <!-- Champ caché pour personnaliser l'objet du mail -->
                 <input type="hidden" name="_subject" value="Nouvelle inscription - Englishjoy">
                 <input type="hidden" name="_language" value="fr">
                 
@@ -109,10 +102,12 @@
                 <div class="form-group checkbox-group">
                   <label>
                     <input type="checkbox" name="terms" required>
+                    <span class="checkbox-custom"></span>
                     J'accepte les <a href="#">conditions générales</a> *
                   </label>
                   <label>
                     <input type="checkbox" name="newsletter">
+                    <span class="checkbox-custom"></span>
                     Je souhaite recevoir la newsletter
                   </label>
                 </div>
@@ -124,7 +119,6 @@
                   </span>
                 </button>
                 
-                <!-- Feedback après soumission -->
                 <div id="formFeedback" style="display:none;"></div>
               </form>
         </section>
@@ -134,22 +128,24 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 290 Rue de la Garenne,92000 Nanterre, emplacement vive les groues</p>
-                <p><i class="fas fa-phone"></i> 0780718160</p>
+                <p><i class="fas fa-map-marker-alt"></i> 290 Rue de la Garenne, 92000 Nanterre</p>
+                <p><i class="fas fa-phone"></i> 07 80 71 81 60</p>
                 <p><i class="fas fa-envelope"></i> Englishjoy92@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com/[votre-page]" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i> Suivez-nous sur Facebook
+                    </a>
+                </div>
             </div>
             <div class="footer-section">
                 <h3>Horaires</h3>
-                <p>mercredi: 10h-19h</p>
-                <p>Samedi: 10h-15h</p>
-                <p>Cours: Mercredi, samedi et vacances scolaires</p>
+                <p>Mercredi : 9h-19h</p>
+                <p>Samedi : 10h-15h</p>
+                <p>Cours pendant les vacances scolaires</p>
             </div>
             <div class="footer-section">
-                <h3>Réseaux sociaux</h3>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                <div class="footer-logo">
+                    <img src="./images/logo.png" alt="Englishjoy Logo">
                 </div>
             </div>
         </div>
@@ -158,7 +154,7 @@
         </div>
     </footer>
 
-<script src="./js/main.js"></script>
-<script src="./js/auth.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/auth.js" defer></script>
 </body>
 </html>
