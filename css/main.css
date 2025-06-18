@@ -1017,6 +1017,6 @@ footer::before {
         gap: var(--space-sm);
     }
     #titre{
-        margin-top: 20px;
+        margin-top: 30px;
     }
 }
