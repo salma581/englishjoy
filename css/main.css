@@ -488,7 +488,7 @@ section {
     content: "★";
     color: var(--color-accent);
     position: absolute;
-    top: -10px;
+    top: -0.1px;
     right: 15px;
     font-size: var(--text-lg);
     text-shadow: 0 2px 3px rgba(0,0,0,0.2);
