@@ -34,14 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 isValid = false;
                 errorMessages.push('Veuillez entrer un email valide');
             }
-
             const ageField = document.getElementById('childAge');
-            if (ageField && (ageField.value < 2 || ageField.value > 12)) {
-                ageField.style.borderColor = 'red';
-                isValid = false;
-                errorMessages.push('L\'âge doit être entre 2 et 12 ans');
+            if (ageField && (ageField.value < 3 || ageField.value > 12)) {
+            ageField.style.borderColor = 'red';
+            isValid = false;
+            errorMessages.push('L\'âge doit être entre 3 et 12 ans');
             }
-
             if (!isValid) {
                 showFeedback('error', errorMessages.join('<br>'));
                 submitBtn.disabled = false;

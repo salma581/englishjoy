@@ -490,7 +490,11 @@ section {
     font-size: var(--text-lg);
     text-shadow: 0 2px 3px rgba(0,0,0,0.2);
 }
-
+.price__1{
+    font-size: var(--text-xl);
+     font-weight: bold;
+      text-align: center;
+}
 .price {
     font-size: var(--text-xl);
     font-weight: bold;
