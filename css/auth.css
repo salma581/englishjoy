@@ -62,7 +62,31 @@ input:focus, select:focus {
     box-shadow: 0 0 0 3px rgba(230,92,14,0.2);
     outline: none;
 }
+/* Style pour le champ de remarques */
+#comments {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    resize: vertical;
+    min-height: 120px;
+}
 
+#comments:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.form-hint {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+    text-align: right;
+}
 /* =============== CASES À COCHER =============== */
 .checkbox-group {
     margin: 2rem 0;

@@ -38,4 +38,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialisation
     animateOnScroll();
     window.addEventListener('scroll', animateOnScroll);
+    document.addEventListener('DOMContentLoaded', function() {
+    // Effet de chargement progressif des images
+    const images = document.querySelectorAll('.photo-card img');
+    
+    images.forEach(img => {
+        img.style.opacity = '0';
+        setTimeout(() => {
+            img.style.transition = 'opacity 0.5s ease';
+            img.style.opacity = '1';
+        }, 300);
+    });
+
+    // Animation au scroll
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.photo-card').forEach(card => {
+        observer.observe(card);
+    });
+});
 });
