@@ -682,7 +682,7 @@ section {
 }
 
 .teacher-photo {
-    flex: 1 1 300px;
+    flex: 1 1 200px;
     position: relative;
 }
 
@@ -744,7 +744,7 @@ section {
     padding-left: var(--space-md);
 }
 
-.teacher-desc ul {
+/* .teacher-desc ul {
     margin-left: var(--space-md);
     margin-bottom: var(--space-md);
 }
@@ -752,7 +752,7 @@ section {
 .teacher-desc li {
     margin-bottom: var(--space-xs);
     list-style-type: disc;
-}
+} */
 
 /* Section À propos des cours */
 .courses-section {
@@ -1037,6 +1037,9 @@ footer::before {
 
     .teacher-bio {
         text-align: left;
+    }
+    .teacher-photo{
+            flex: 1 1 100px;
     }
 
     /* Footer ajustements */
