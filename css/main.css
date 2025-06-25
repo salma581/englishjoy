@@ -744,15 +744,6 @@ section {
     padding-left: var(--space-md);
 }
 
-.teacher-desc p::before {
-    content: "•";
-    color: var(--color-primary);
-    position: absolute;
-    left: 0;
-    font-size: var(--text-lg);
-    line-height: 1;
-}
-
 .teacher-desc ul {
     margin-left: var(--space-md);
     margin-bottom: var(--space-md);
