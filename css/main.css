@@ -238,7 +238,7 @@ section {
 }
 
 /* Section About améliorée */
-.about-section {
+/* .about-section {
     display: flex;
     gap: var(--space-lg);
     padding: var(--space-xl);
@@ -430,8 +430,322 @@ section {
     padding: var(--space-xs);
     text-align: center;
     font-weight: bold;
+} */
+/* Styles de base */
+.about-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
 }
 
+.about-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease;
+}
+
+.about-header h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.about-header h3 {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+.about-header h1 {
+    font-size: 2rem;
+    color: #e74c3c;
+    margin: 1rem 0;
+}
+
+.date-container {
+    background-color: #f8f9fa;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite;
+}
+
+.emoji {
+    margin-right: 8px;
+}
+
+/* Layout principal */
+.about-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.special-offer-container {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.about-images {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+/* Styles pour l'offre spéciale */
+.special-offer {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInLeft 1s ease;
+}
+
+.offer-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.offer-badge {
+    background-color: #e74c3c;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.offer-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.offer-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.discount-container {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.discount-badge {
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.pricing-conditions {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.cta-button {
+    display: block;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
+}
+
+/* Styles pour les images */
+.image-container {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    animation: fadeInRight 1s ease;
+}
+
+.image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.8rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Styles pour la boîte d'avantages */
+.benefits-box {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    animation: fadeInUp 1s ease;
+}
+
+.benefits-box h3 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefits-list li {
+    padding: 0.8rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.benefit-icon {
+    color: #2ecc71;
+    font-weight: bold;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .special-offer-container, .about-images {
+        max-width: 100%;
+    }
+
+    .about-header h2 {
+        font-size: 2rem;
+    }
+
+    .about-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .about-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .image-container {
+        min-width: 100%;
+    }
+}
 /* Section Tarifs améliorée */
 .pricing-section {
     background-color: var(--color-white);
