@@ -959,9 +959,10 @@ section {
 .class-body .btn {
     width: 100%;
     padding: var(--space-xs);
-    font-size: var(--text-base);
-    font-weight: 600;
+    /* font-size: var(--text-base);
+    font-weight: 600; */
     margin-top: auto;
+   margin-bottom: 30px;
 }
 
 /* Section Enseignant améliorée */
