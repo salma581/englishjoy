@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - Comenjoy School</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header-container">
+        <div class="logo-container">
+            <img src="./images/logo.png" alt="Englishjoy Logo"/>
+        </div>
+        <div class="banner">
+            <div class="banner-content">
+                <h1>Englishjoy</h1>
+                <p>English Inscription</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="inscription.html">Inscription</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+     <main class="form-container">
+        <section class="form-section">
+            <h2>Formulaire d'Inscription</h2>
+            <p>Remplissez ce formulaire pour inscrire votre enfant à nos cours d'anglais. Nous vous contacterons dans les 48h pour confirmer l'inscription.</p>
+            
+            <form id="registrationForm" action="https://formspree.io/f/mdkelnlk" method="POST">
+                <input type="hidden" name="_subject" value="Nouvelle inscription - Englishjoy">
+                <input type="hidden" name="_language" value="fr">
+                
+                <div class="form-group">
+                  <h3>Informations du Parent</h3>
+                  <div class="form-row">
+                    <div class="input-group">
+                      <label for="parentFirstName">Prénom *</label>
+                      <input type="text" id="parentFirstName" name="parentFirstName" required
+                             pattern="[A-Za-zÀ-ÿ\s]{2,}" 
+                             title="Minimum 2 caractères alphabétiques">
+                    </div>
+                    <div class="input-group">
+                      <label for="parentLastName">Nom *</label>
+                      <input type="text" id="parentLastName" name="parentLastName" required
+                             pattern="[A-Za-zÀ-ÿ\s]{2,}"
+                             title="Minimum 2 caractères alphabétiques">
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="input-group">
+                      <label for="parentEmail">Email *</label>
+                      <input type="email" id="parentEmail" name="parentEmail" required
+                             placeholder="exemple@domaine.com">
+                    </div>
+                    <div class="input-group">
+                      <label for="parentPhone">Téléphone *</label>
+                      <input type="tel" id="parentPhone" name="parentPhone" required
+                             pattern="[0-9]{10}" 
+                             placeholder="0612345678">
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="form-group">
+                  <h3>Informations de l'Enfant</h3>
+                  <div class="form-row">
+                    <div class="input-group">
+                      <label for="childName">Prénom de l'enfant *</label>
+                      <input type="text" id="childName" name="childName" required>
+                    </div>
+                    <div class="input-group">
+                      <label for="childName">Nom de l'enfant *</label>
+                      <input type="text" id="childName" name="childName" required>
+                    </div>
+                    <div class="input-group">
+                      <label for="childAge">Âge *</label>
+                      <input type="number" id="childAge" name="childAge" 
+                             min="3" max="12" required>
+                    </div>
+                  </div>
+                  
+                  <div class="input-group">
+                    <label for="childClass">Groupe souhaité *</label>
+                    <select id="childClass" name="childClass" required>
+                      <option value="">-- Sélectionnez --</option>
+
+                     <optgroup label="Toddlers (3-5 ans)">
+                       <option value="Toddlers - Mercredi 10h15">Mercredi 10h15</option>
+                       <option value="Toddlers - Samedi 10h">Samedi 10h</option>
+                     </optgroup>
+                     <optgroup label="Pre-School (6-7 ans)">
+                       <option value="Pre-School  - Mercredi 11h">Mercredi 11h</option>
+                       <option value="Pre-School  - Mercredi 15h">Mercredi 15h</option>
+                       <option value="Pre-School  - Samedi 11h">Samedi 11h</option>  
+                        <option value="Juniors  - Samedi 14h">Samedi 14h</option>
+                     </optgroup>
+                     <optgroup label="Kids (8-10 ans)">
+                       <option value="Kids - Mercredi 12h">Mercredi 12h</option>
+                        <option value="Kids - Mercredi 17h30">Mercredi 17h30</option>
+                         <option value="Kids - samedi 13h">Samedi 13h</option>
+                        <!-- <option value="Kids - Samedi 15h30">Samedi 15h30</option>   -->
+                     </optgroup>
+                     <optgroup label="Juniors (10-13 ans)">
+                       <option value="Juniors  - Mercredi 14h">Mercredi 14h</option>
+                     
+                     </optgroup>
+                     <optgroup label="Cours en ligne">
+                       <option value="en ligne">Enfant</option>
+                       <option value="en ligne">Adulte</option>
+                     </optgroup>
+                      
+                    </select>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+            <h3>Options de Paiement</h3>
+            <div class="payment-options">
+                <label class="payment-option">
+                    <input type="radio" name="payment_frequency" value="semestriel" checked required>
+                    <span class="radio-custom"></span>
+                    <span class="option-content">
+                        <span class="option-title">Paiement semestriel</span>
+                        <span class="option-description">2 paiements dans l'année</span>
+                    </span>
+                </label>
+                
+                <label class="payment-option">
+                    <input type="radio" name="payment_frequency" value="annuel" required>
+                    <span class="radio-custom"></span>
+                    <span class="option-content">
+                        <span class="option-title">Paiement annuel</span>
+                        <span class="option-description">1 paiement (économisez 10%)</span>
+                    </span>
+                </label>
+            </div>
+        </div>
+
+               <div class="form-group">
+                <label for="comments">Remarques ou questions :</label>
+                <textarea 
+                   id="comments" 
+                   name="comments" 
+                    rows="4" 
+                    placeholder="Écrivez ici toute information complémentaire, question ou demande particulière..."></textarea>
+                <p class="form-hint">(Ce champ est optionnel - maximum 300 caractères)</p>
+                 </div>
+                <div class="form-group checkbox-group">
+                  <!-- <label>
+                    <input type="checkbox" name="terms" required>
+                    <span class="checkbox-custom"></span>
+                    J'accepte les <a href="#">conditions générales</a> *
+                  </label> -->
+                  <label>
+                    <input type="checkbox" name="newsletter">
+                    <span class="checkbox-custom"></span>
+                    Je souhaite recevoir la newsletter
+                  </label>
+                </div>
+              
+                <button type="submit" class="submit-btn">
+                  <span class="btn-text">Envoyer l'inscription</span>
+                  <span class="loading-icon" style="display:none;">
+                    <i class="fas fa-spinner fa-spin"></i>
+                  </span>
+                </button>
+                
+                <div id="formFeedback" style="display:none;"></div>
+              </form>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 290 Rue de la Garenne, 92000 Nanterre</p>
+                <p><i class="fas fa-phone"></i> 07 80 71 81 60</p>
+                <p><i class="fas fa-envelope"></i> Englishjoy92@gmail.com</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/eng.lishjoy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i> Suivez-nous sur Instagram
+                  </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Mercredi : 9h-19h</p>
+                <p>Samedi : 10h-15h</p>
+                <p>Colo pendant les vacances scolaires</p>
+            </div>
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./images/logo.png" alt="Englishjoy Logo">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Englishjoy School. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/auth.js" defer></script>
+</body>
+</html>
