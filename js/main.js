@@ -68,3 +68,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 });
+
+// ===== ANIMATION COLO CARD =====
+const coloCard = document.querySelector('.colo-card');
+
+if (coloCard) {
+    const coloObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                coloCard.style.opacity = '1';
+                coloCard.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.2 });
+
+    coloObserver.observe(coloCard);
+}
