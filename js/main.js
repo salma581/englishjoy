@@ -95,29 +95,32 @@ listItems.forEach((li, index) => {
             img.style.opacity = '1';
         }, 300);
     });
+const btn = document.getElementById("seeMoreBtn");
+const hiddenCards = document.querySelectorAll(".photo-card.is-hidden"); 
 
-    // 5️⃣ Bouton "Voir plus" (optionnel)
-    const btn = document.getElementById("seeMoreBtn");
-    const hiddenCards = document.querySelectorAll(".media-card.is-hidden");
-    if (btn && hiddenCards.length > 0) {
-        let expanded = false;
-        btn.addEventListener("click", () => {
-            hiddenCards.forEach(card => {
-                if (!expanded) {
-                    card.classList.remove("is-hidden");
-                    card.classList.add("is-visible");
+if (btn && hiddenCards.length > 0) {
+    let expanded = false;
 
-                    card.style.animation = "none";
-                    card.offsetHeight; // force reflow
-                    card.style.animation = "fadeIn 0.6s ease forwards";
-                } else {
-                    card.classList.remove("is-visible");
-                    card.classList.add("is-hidden");
-                }
-            });
-            btn.textContent = expanded ? "Voir plus" : "Voir moins";
-            expanded = !expanded;
+    btn.addEventListener("click", () => {
+        hiddenCards.forEach(card => {
+            if (!expanded) {
+                card.classList.remove("is-hidden");
+                card.classList.add("is-visible");
+
+                // animation fadeIn
+                card.style.animation = "none";
+                card.offsetHeight; // force reflow
+                card.style.animation = "fadeIn 0.6s ease forwards";
+            } else {
+                card.classList.remove("is-visible");
+                card.classList.add("is-hidden");
+            }
         });
-    }
+
+        btn.textContent = expanded ? "Voir plus" : "Voir moins";
+        expanded = !expanded;
+    });
+}
+
 
 });

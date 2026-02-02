@@ -479,11 +479,12 @@ section {
 }
 
 .colo-section {
-  margin: 60px 20px;
+  margin: 60px 10px;
 }
 
 .colo-card-pro {
-  max-width: 1100px;
+             /* prendre toute la largeur possible */
+  max-width: 1200px;
   margin: auto;
   background: #fff;
   border-radius: 18px;
@@ -493,7 +494,12 @@ section {
   transform: translateY(40px);
   transition: all 0.8s ease;
 }
-
+@media (max-width: 768px) {
+  .colo-card-pro {
+    width: 95%;           /* presque toute la largeur de l’écran */
+    padding: 25px;
+  }
+}
 /* TEXTE */
 .colo-title {
   text-align: center;
@@ -1522,6 +1528,7 @@ section {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     position: relative;
     transition: all 0.3s ease;
+    opacity: 1; /* 🔧 CORRECTION : ne pas forcer opacity à 0 */
 }
 
 .photo-card:hover {
@@ -1568,10 +1575,13 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* 🔧 CORRECTION : on supprime l’animation automatique sur TOUTES les cartes */
+/*
 .photo-card {
     animation: fadeIn 0.6s ease forwards;
     opacity: 0;
 }
+*/
 
 .photo-card:nth-child(1) { animation-delay: 0.1s; }
 .photo-card:nth-child(2) { animation-delay: 0.2s; }
@@ -1583,23 +1593,31 @@ section {
 .photo-card:nth-child(8) { animation-delay: 0.8s; }
 .photo-card:nth-child(9) { animation-delay: 0.9s; }
 
-
- .see-more-text {
+/* Bouton Voir plus */
+.see-more-text {
     background: none;       
     border: none;           
     color: #3498db;         
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
-    padding: 0;              /* Pas d’espace supplémentaire */
+    padding: 0;
     margin: 0;
 }
 
 .see-more-text:hover {
-    color: #2980b9;          /* Bleu plus foncé au survol */
-    text-decoration: none;    /* enlever le souligné si tu veux */
+    color: #2980b9;
+    text-decoration: none;
 }
 
+/* 🔧 CORRECTION IMPORTANTE : bouton dans le grid */
+.gallery-button {
+    grid-column: 1 / -1; /* prend toute la largeur du grid */
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; /* rapproché des photos */
+    margin-bottom: 0;
+}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -1631,24 +1649,18 @@ section {
         padding: 10px 25px;
     }
 }
+
 /* Cartes cachées par défaut */
 .photo-card.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    pointer-events: none;
-    overflow: hidden;
+    display: none; /* 🔧 CORRECTION : plus fiable que height/opacity */
 }
 
 /* Cartes révélées */
 .photo-card.is-visible {
-    opacity: 1;
-    visibility: visible;
-    height: 220px;
-    pointer-events: auto;
+    display: block;
+    animation: fadeIn 0.6s ease forwards;
 }
+
 .photo-card video {
     width: 100%;
     height: 100%;
@@ -1973,4 +1985,9 @@ footer::before {
     padding: 0 20px;
     max-width: 1200px;
     margin: 0 auto;
+}
+@media (max-width: 768px) {
+    .see-more {
+        margin-top: 15px !important;
+    }
 }
