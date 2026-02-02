@@ -479,88 +479,192 @@ section {
 }
 
 .colo-section {
-  margin: 60px 0;
+  margin: 60px 20px;
 }
 
 .colo-card-pro {
   max-width: 1100px;
   margin: auto;
-  background: #ffffff;
+  background: #fff;
   border-radius: 18px;
   padding: 40px;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
-.colo-left h3 {
-  font-size: 1.8rem;
+/* TEXTE */
+.colo-title {
+  text-align: center;
+  font-size: 2rem;
   background: linear-gradient(90deg, #c0392b, #3b4cca);
   -webkit-background-clip: text;
   color: transparent;
+  margin-bottom: 10px;
 }
 
 .colo-subtitle {
-  margin: 10px 0 20px;
+  text-align: center;
   font-weight: 600;
-  color: #555;
-}
-
-.colo-text {
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.colo-list {
-  padding-left: 18px;
-  margin-bottom: 20px;
-}
-
-.colo-list li {
-  margin-bottom: 8px;
-}
-
-.colo-info {
-  font-size: 0.95rem;
-  color: #444;
   margin-bottom: 25px;
 }
 
-/* CTA fort mais cohérent */
+
+/* TEXTE ANIMÉ */
+.colo-text,
+.colo-info,
+.colo-list li {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.6s ease-out;
+}
+
+/* Quand la carte colo devient visible */
+.colo-card-pro.visible .colo-text,
+.colo-card-pro.visible .colo-info {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.colo-card-pro.visible .colo-list li {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered animation pour chaque li */
+.colo-list li {
+  transition-delay: 0s; /* sera remplacé par JS */
+}
+/* Transforme chaque li en bulle */
+/* Liste transformée en bulles */
+.colo-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px; /* espace entre bulles */
+  padding-bottom: 30px;
+   padding-top: 30px;
+  list-style: none;
+}
+
+/* Chaque li = bulle */
+.colo-list li {
+  background-color: #3e4fd2; 
+  /* Pour changer couleur, tu peux mettre #3b4cca pour bleu-violet */
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem; /* un peu plus petit */
+  line-height: 1.3; /* pour permettre deux lignes */
+  text-align: center;
+  padding: 8px 14px; /* bulle plus petite */
+  border-radius: 40px; /* très arrondi */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  cursor: default;
+
+  /* Animation initiale */
+  opacity: 0;
+  transform: translateY(20px) scale(0.85);
+  transition: all 0.5s ease-out;
+
+  white-space: normal; /* permet au texte de passer sur deux lignes */
+  word-break: break-word;
+}
+
+/* Animation flottante */
+@keyframes float {
+  0%   { transform: translateY(0px) translateX(0px); }
+  25%  { transform: translateY(-3px) translateX(2px); }
+  50%  { transform: translateY(0px) translateX(-2px); }
+  75%  { transform: translateY(3px) translateX(1px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+.colo-list li.float {
+  animation: float 3s ease-in-out infinite;
+}
+
 .colo-cta-pro {
-  display: inline-block;
-  padding: 16px 36px;
+  display: block;               /* OBLIGATOIRE */
+  width: fit-content;           /* bouton ajusté au texte */
+  margin: 35px auto 10px;       /* centrage horizontal */
+  padding: 16px 38px;
   border-radius: 40px;
   background: linear-gradient(90deg, #c0392b, #3b4cca);
-  color: #fff;
-  font-weight: bold;
+  color: #ffffff;
+  font-weight: 700;
   text-decoration: none;
+  box-shadow: 0 10px 25px rgba(59, 76, 204, 0.35);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .colo-cta-pro:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(59,76,204,0.35);
+  box-shadow: 0 14px 30px rgba(192, 57, 43, 0.45);
 }
 
-/* Photos */
-.colo-right {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-}
-
-.colo-photo-card {
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.colo-photo-card img {
+.colo-video-wrapper {
   width: 100%;
-  height: 160px;
+  max-width: 1100px;
+  margin: 50px auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+}
+
+.colo-video-wrapper video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* TITRE PHOTOS */
+.colo-gallery-title {
+  text-align: center;
+  margin: 50px 0 25px;
+  font-size: 1.4rem;
+}
+
+/* GALERIE */
+.colo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.media-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.media-card img,
+.media-card video {
+  width: 100%;
+  height: 220px;
   object-fit: cover;
 }
+
+.media-card:hover {
+  transform: scale(1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .colo-card-pro {
+    padding: 25px;
+  }
+
+  .media-card img,
+  .media-card video {
+    height: 180px;
+  }
+}
+
 
 /* Layout principal */
 .about-content-wrapper {
@@ -1479,25 +1583,23 @@ section {
 .photo-card:nth-child(8) { animation-delay: 0.8s; }
 .photo-card:nth-child(9) { animation-delay: 0.9s; }
 
-/* Bouton "Voir plus" */
-.see-more {
-    margin-top: 40px;
-    display: inline-block;
-    padding: 12px 30px;
-    background: #3498db;
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
+
+ .see-more-text {
+    background: none;       
+    border: none;           
+    color: #3498db;         
+    font-size: 1.1rem;
     font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    cursor: pointer;
+    padding: 0;              /* Pas d’espace supplémentaire */
+    margin: 0;
 }
 
-.see-more:hover {
-    background: #2980b9;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+.see-more-text:hover {
+    color: #2980b9;          /* Bleu plus foncé au survol */
+    text-decoration: none;    /* enlever le souligné si tu veux */
 }
+
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -1529,6 +1631,32 @@ section {
         padding: 10px 25px;
     }
 }
+/* Cartes cachées par défaut */
+.photo-card.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Cartes révélées */
+.photo-card.is-visible {
+    opacity: 1;
+    visibility: visible;
+    height: 220px;
+    pointer-events: auto;
+}
+.photo-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    background: black;
+}
+
 /* Footer amélioré */
 footer {
     background-color: var(--color-text);
