@@ -547,6 +547,16 @@ section {
     display: flex;
     align-items: center;
 }
+.highlight-offer {
+    justify-content: center;
+    border-bottom: none;
+}
+
+.highlight-offer .offer-text {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+}
 
 .discount-container {
     text-align: center;
@@ -568,6 +578,15 @@ section {
     color: #7f8c8d;
     text-align: center;
     margin: 1rem 0;
+}
+.group-warning {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #e67e22;
+    background-color: #fff3e0;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin: 1.2rem 0;
 }
 
 .cta-button {
