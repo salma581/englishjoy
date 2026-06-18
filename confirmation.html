@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation d'inscription - Englishjoy</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/confirmation.css">
+</head>
+<body>
+
+    <main class="confirmation-page">
+
+        <div class="confirmation-card">
+
+            <div class="success-icon">✅</div>
+
+            <h1>Inscription envoyée</h1>
+
+            <p class="confirmation-message">
+                Merci pour votre inscription.
+                <br>
+                Nous vous contacterons dans les 48 heures afin de confirmer votre demande.
+            </p>
+
+            <section class="recap-section">
+
+                <h2>Récapitulatif de votre demande</h2>
+
+                <div class="recap-item">
+                    <span class="label">Parent :</span>
+                    <span id="parentName"></span>
+                </div>
+
+                <div class="recap-item">
+                    <span class="label">Email :</span>
+                    <span id="parentEmail"></span>
+                </div>
+
+                <div class="recap-item">
+                    <span class="label">Téléphone :</span>
+                    <span id="parentPhone"></span>
+                </div>
+
+                <hr>
+
+                <div class="recap-item">
+                    <span class="label">Enfant :</span>
+                    <span id="childName"></span>
+                </div>
+
+                <div class="recap-item">
+                    <span class="label">Âge :</span>
+                    <span id="childAge"></span>
+                </div>
+
+                <div class="recap-item">
+                    <span class="label">Groupe :</span>
+                    <span id="childClass"></span>
+                </div>
+
+                <hr>
+
+                <div class="recap-item">
+                    <span class="label">Paiement :</span>
+                    <span id="paymentFrequency"></span>
+                </div>
+
+                <div class="recap-item">
+                    <span class="label">Remarques :</span>
+                    <span id="comments"></span>
+                </div>
+
+            </section>
+
+            <a href="index.html" class="home-btn">
+                Retour à l'accueil
+            </a>
+
+        </div>
+
+    </main>
+
+    <script src="./js/confirmation.js"></script>
+
+</body>
+</html>

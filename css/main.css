@@ -509,6 +509,122 @@ section {
     max-width: 500px;
 }
 
+/* =========================
+OFFRE FIDÉLITÉ
+========================= */
+
+.special-offer {
+background: white;
+border-radius: 15px;
+padding: 1.8rem;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+animation: fadeInLeft 1s ease;
+min-height: 620px;
+}
+
+.offer-header {
+text-align: center;
+margin-bottom: 1.5rem;
+}
+
+.offer-badge {
+background: linear-gradient(135deg, #ff9800, #f57c00);
+color: white;
+padding: 0.4rem 1rem;
+border-radius: 25px;
+font-weight: bold;
+font-size: 0.9rem;
+display: inline-block;
+margin-bottom: 0.8rem;
+}
+
+.offer-header h3 {
+margin: 0;
+color: #2c3e50;
+}
+
+.discount-container {
+text-align: center;
+margin: 1.5rem 0;
+}
+
+.discount-badge {
+background: linear-gradient(135deg, #2ecc71, #27ae60);
+color: white;
+padding: 0.8rem 1.8rem;
+border-radius: 40px;
+font-size: 1.8rem;
+font-weight: bold;
+display: inline-block;
+box-shadow: 0 5px 15px rgba(46, 204, 113, 0.25);
+}
+
+.offer-list {
+list-style: none;
+padding: 0;
+margin: 1.5rem 0;
+}
+
+.offer-list li {
+padding: 1rem 0;
+border-bottom: 1px solid #eee;
+text-align: center;
+}
+
+.offer-list li:last-child {
+border-bottom: none;
+}
+
+.highlight-offer .offer-text {
+font-size: 1.15rem;
+font-weight: 700;
+color: #2c3e50;
+}
+
+.offer-text {
+color: #555;
+}
+
+.limited-offer {
+text-align: center;
+background: #fff8e1;
+border: 1px solid #ffe082;
+border-radius: 10px;
+padding: 1rem;
+margin: 1.5rem 0;
+color: #e65100;
+}
+
+.group-warning {
+text-align: center;
+font-size: 0.95rem;
+color: #e67e22;
+background-color: #fff3e0;
+padding: 0.8rem;
+border-radius: 8px;
+margin: 1.2rem 0;
+}
+
+.cta-button {
+display: block;
+background-color: #3498db;
+color: white;
+text-align: center;
+padding: 1rem;
+border-radius: 8px;
+text-decoration: none;
+font-weight: bold;
+transition: all 0.3s ease;
+margin-top: 1.5rem;
+}
+
+.cta-button:hover {
+background-color: #2980b9;
+transform: translateY(-3px);
+box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
+}
+
+
 /* Styles pour l'offre spéciale */
 .special-offer {
     background: white;
@@ -609,44 +725,49 @@ section {
 }
 
 /* Styles pour les images */
-.image-container {
-    flex: 1;
-    min-width: 250px;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    animation: fadeInRight 1s ease;
+.about-content-wrapper {
+display: flex;
+gap: 2rem;
+align-items: stretch;
+margin-top: var(--space-md);
 }
 
-.image-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.special-offer-container {
+flex: 1;
+ min-width: 300px;
+}
+
+.about-images {
+flex: 1;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+ min-width: 300px;
+}
+
+.image-container {
+flex: 1;
 }
 
 .image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.5s ease;
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: var(--radius-md);
 }
 
-.image-container:hover img {
-    transform: scale(1.05);
+/* Mobile */
+@media (max-width: 768px) {
+.about-content-wrapper {
+flex-direction: column;
+}
+.special-offer-container,
+    .about-images {
+        max-width: 100%;
+        min-width: unset;
+    }
 }
 
-.image-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 0.8rem;
-    text-align: center;
-    font-weight: bold;
-}
 
 /* Styles pour la boîte d'avantages */
 .benefits-box {
@@ -768,117 +889,148 @@ section {
         min-width: 100%;
     }
 }
-/* Section Tarifs améliorée */
+/* Section Tarifs */
+
 .pricing-section {
-    background-color: var(--color-white);
-    padding: var(--space-xl) var(--space-md);
-    margin: var(--space-xl) 0;
-    border-top: 1px solid var(--color-medium-gray);
-    border-bottom: 1px solid var(--color-medium-gray);
+background-color: var(--color-white);
+padding: var(--space-xl) var(--space-md);
+margin: var(--space-xl) 0;
+border-top: 1px solid var(--color-medium-gray);
+border-bottom: 1px solid var(--color-medium-gray);
 }
 
 .pricing-container {
-    max-width: 1200px;
-    margin: 0 auto;
+max-width: 1200px;
+margin: 0 auto;
 }
 
 .pricing-section h2 {
-    text-align: center;
-    margin-bottom: var(--space-xl);
-    font-size: var(--text-xl);
-    color: var(--color-primary-dark);
-    position: relative;
+text-align: center;
+margin-bottom: var(--space-xl);
+font-size: var(--text-xl);
+color: var(--color-primary-dark);
+position: relative;
 }
 
 .pricing-section h2::after {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: var(--color-primary);
-    margin: var(--space-sm) auto 0;
+content: "";
+display: block;
+width: 80px;
+height: 4px;
+background: var(--color-primary);
+margin: var(--space-sm) auto 0;
 }
 
 .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-md);
-    margin-top: var(--space-md);
+display: flex;
+justify-content: center;
 }
 
 .pricing-card {
-    background: var(--color-white);
-    border-radius: var(--radius-md);
-    padding: var(--space-md);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--color-medium-gray);
-    transition: transform 0.3s ease;
+max-width: 600px;
+width: 100%;
+background: var(--color-white);
+border-radius: var(--radius-md);
+padding: var(--space-lg);
+box-shadow: var(--shadow-sm);
+border: 1px solid var(--color-medium-gray);
 }
 
 .pricing-card.highlighted {
-    border: 2px solid var(--color-primary);
-    position: relative;
+border: 2px solid var(--color-primary);
+position: relative;
 }
 
 .highlighted::before {
-    content: "★";
-    color: var(--color-accent);
-    position: absolute;
-    top: -0.1px;
-    right: 15px;
-    font-size: var(--text-lg);
-    text-shadow: 0 2px 3px rgba(0,0,0,0.2);
-}
-.price__1{
-    font-size: var(--text-xl);
-     font-weight: bold;
-      text-align: center;
-}
-.price {
-    font-size: var(--text-xl);
-    font-weight: bold;
-    color: var(--color-primary);
-    margin: var(--space-sm) 0 var(--space-xs);
-    text-align: center;
+content: "★";
+color: var(--color-accent);
+position: absolute;
+top: 12px;
+right: 15px;
+font-size: var(--text-lg);
 }
 
-.price-subtitle {
-    color: var(--color-dark-gray);
-    margin-bottom: var(--space-md);
-    font-size: var(--text-base);
-    text-align: center;
-}
-
-.pricing-features {
-    list-style: none;
-    padding: 0;
-    margin: var(--space-md) 0;
-}
-
-.pricing-features li {
-    padding: var(--space-xs) 0;
-    position: relative;
-    padding-left: var(--space-lg);
-}
-
-.pricing-features li::before {
-    content: "✓";
-    color: var(--color-primary);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+.pricing-card h3 {
+text-align: center;
+color: var(--color-primary-dark);
+margin-bottom: 1.5rem;
 }
 
 .price-breakdown {
-    margin: var(--space-md) 0;
-    padding: var(--space-xs);
-    background: var(--color-light-gray);
-    border-radius: var(--radius-sm);
+background: var(--color-light-gray);
+padding: 1rem;
+border-radius: var(--radius-sm);
 }
 
-.price-breakdown p {
-    margin-bottom: var(--space-xs);
+.offer-block {
+background: white;
+border: 1px solid var(--color-medium-gray);
+border-radius: var(--radius-sm);
+padding: 1rem;
+text-align: center;
+margin-bottom: 1rem;
 }
+
+.offer-block:last-child {
+margin-bottom: 0;
+}
+
+.offer-block h4 {
+color: var(--color-primary);
+margin-bottom: 0.5rem;
+}
+
+.offer-block p {
+margin: 0.35rem 0;
+}
+
+.price__1 {
+font-size: 1.8rem;
+font-weight: bold;
+color: var(--color-primary);
+}
+
+.price {
+text-align: center;
+font-size: 1.4rem;
+font-weight: bold;
+color: var(--color-primary);
+margin-top: 1.5rem;
+}
+
+.price-subtitle {
+text-align: center;
+font-size: 1rem;
+margin-top: 0.5rem;
+margin-bottom: 1.5rem;
+color: var(--color-dark-gray);
+}
+
+.pricing-features {
+list-style: none;
+padding: 0;
+}
+
+.pricing-features li {
+position: relative;
+padding-left: 28px;
+margin-bottom: 12px;
+}
+
+.pricing-features li::before {
+content: "✓";
+position: absolute;
+left: 0;
+color: var(--color-primary);
+font-weight: bold;
+}
+
+.pricing-conditions {
+text-align: center;
+margin-top: 2rem;
+color: var(--color-dark-gray);
+}
+
 
 /* Section Classes améliorée */
 .classes-section {
@@ -1687,6 +1839,153 @@ footer::before {
     .teacher-photo{
             flex: 1 1 100px;
     }
+  
+
+    /* =========================
+   SECTION AVIS
+========================= */
+
+.reviews-section {
+    padding: 80px 20px;
+    background: #f8fafc;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.reviews-header h2 {
+    font-size: 2.3rem;
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+.reviews-header p {
+    max-width: 650px;
+    margin: 0 auto;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    animation: fadeUp 0.8s ease forwards;
+}
+
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.stars {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.review-card h4 {
+    color: #1f2937;
+    font-size: 1rem;
+}
+
+.reviews-button {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.google-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-weight: 600;
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.google-btn:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* Animation */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   TABLETTE
+========================= */
+
+@media (max-width: 768px) {
+
+    .reviews-section {
+        padding: 60px 15px;
+    }
+
+    .reviews-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .review-card {
+        padding: 25px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .reviews-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .reviews-header p {
+        font-size: 0.95rem;
+    }
+
+    .google-btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+
 
     /* Footer ajustements */
     footer {

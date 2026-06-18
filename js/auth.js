@@ -63,16 +63,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
 
                 if (response.ok) {
-                    showFeedback('success', 'Merci ! Votre inscription a bien été envoyée.<br>Nous vous contacterons dans les 48h.');
-                    registrationForm.reset();
-                    
-                    // Sauvegarde locale des données
-                    saveFormDataLocally(formData);
-                    
-                    // Redirection douce après 3s
-                    setTimeout(() => {
-                        window.location.href = 'index.html';
-                    }, 3000);
+
+                  // Sauvegarde locale des données AVANT le reset
+    saveFormDataLocally(formData);
+
+    // Redirection vers la page de confirmation
+    window.location.href = 'confirmation.html';
+
                 } else {
                     throw new Error('Erreur serveur');
                 }
