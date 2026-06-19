@@ -141,7 +141,7 @@ img {
 .banner {
     height: 300px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                       url('../images/entrée.jpg');
+                       url('../images/banner.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat; /* Évite la répétition */
@@ -2116,4 +2116,25 @@ footer::before {
     .see-more {
         margin-top: 15px !important;
     }
+}
+.reviews-rating {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 4px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.reviews-rating i {
+     color: #FFD700;
+     text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+     font-size: 1.5rem;
+}
+
+.reviews-rating span {
+    margin-left: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
 }
