@@ -122,5 +122,22 @@ if (btn && hiddenCards.length > 0) {
     });
 }
 
+// avis de haut de page
+});
+document.querySelectorAll('.read-more-btn').forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        const hiddenText =
+            button.previousElementSibling.querySelector('.hidden-text');
+
+        hiddenText.classList.toggle('show');
+
+        button.textContent =
+            hiddenText.classList.contains('show')
+            ? 'Réduire'
+            : 'Lire la suite';
+
+    });
 
 });
