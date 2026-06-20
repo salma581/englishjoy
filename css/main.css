@@ -140,7 +140,7 @@ img {
 
 
 /* Banner */
-.banner {
+ .banner {
     border-radius: 20px;          
     margin: 20px auto;            
     max-width: 97%;               
@@ -177,18 +177,19 @@ img {
 /* ---  RESPONSIVE POUR MOBILE --- */
 @media screen and (max-width: 768px) {
     .banner {
-        height: 200px;            /* Réduit un peu la hauteur sur mobile (optionnel) */
-        border-radius: 15px;      /* Arrondi un peu moins fort si vous voulez */
-        margin: 15px auto;
-        max-width: 98%;
+        min-height: 260px;
+        height: auto;
+        padding: 25px 15px;
+        
     }
 
     .banner h1 {
-        font-size: 1.8rem;        /* Texte plus petit sur mobile */
+        font-size: 1.4rem; 
+           line-height: 1.3;       
     }
 
     .banner p {
-        font-size: 1rem;          /* Texte plus petit sur mobile */
+        font-size: 0.95rem;          
     }
     
     .banner-content {
@@ -210,7 +211,7 @@ img {
     .banner p {
         font-size: 0.9rem;
     }
-}
+} 
 
 
 /* Navigation */
