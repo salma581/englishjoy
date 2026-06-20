@@ -120,7 +120,7 @@ img {
     box-shadow: var(--shadow-md);
 }
 
-/* Header avec logo agrandi */
+
 .header-container {
     position: relative;
     width: 100%;
@@ -128,7 +128,7 @@ img {
 }
 
 .logo-container {
-    width: 250px; /* Taille agrandie */
+    width: 250px; 
     margin: 0 auto;
     padding: var(--space-sm) 0;
     transition: transform 0.3s ease;
@@ -138,13 +138,19 @@ img {
     transform: scale(1.05);
 }
 
+
+/* Banner */
 .banner {
+    border-radius: 20px;          
+    margin: 20px auto;            
+    max-width: 97%;               
+    
     height: 300px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
                        url('../images/banner.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; /* Évite la répétition */
+    background-repeat: no-repeat; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +174,46 @@ img {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
-/* Navigation améliorée */
+/* ---  RESPONSIVE POUR MOBILE --- */
+@media screen and (max-width: 768px) {
+    .banner {
+        height: 200px;            /* Réduit un peu la hauteur sur mobile (optionnel) */
+        border-radius: 15px;      /* Arrondi un peu moins fort si vous voulez */
+        margin: 15px auto;
+        max-width: 98%;
+    }
+
+    .banner h1 {
+        font-size: 1.8rem;        /* Texte plus petit sur mobile */
+    }
+
+    .banner p {
+        font-size: 1rem;          /* Texte plus petit sur mobile */
+    }
+    
+    .banner-content {
+        padding: 0 15px;          /* Réduit le padding intérieur */
+    }
+}
+
+/* Pour les très petits écrans (optionnel) */
+@media screen and (max-width: 480px) {
+    .banner {
+        height: 150px;
+        border-radius: 10px;
+    }
+    
+    .banner h1 {
+        font-size: 1.4rem;
+    }
+    
+    .banner p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Navigation */
 nav {
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
     box-shadow: var(--shadow-sm);
