@@ -525,7 +525,9 @@ section {
 }
 
 
-/* Layout principal */
+/* ============================================
+   LAYOUT PRINCIPAL
+   ============================================ */
 .about-content-wrapper {
     display: flex;
     flex-direction: column;
@@ -537,139 +539,184 @@ section {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch; /* Force la même hauteur entre l'offre et les images */
 }
 
+/* ============================================
+   CONTENEUR OFFRE
+   ============================================ */
 .special-offer-container {
     flex: 1;
     min-width: 300px;
     max-width: 500px;
+    display: flex;
+    flex-direction: column; /* Permet à l'offre de s'étirer en hauteur */
 }
 
+.special-offer {
+    background: white;
+    border-radius: 15px;
+    padding: 1.8rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInLeft 1s ease;
+    flex: 1;                /* Prend toute la hauteur disponible */
+    display: flex;
+    flex-direction: column; /* Maintient l'empilement interne */
+    /* min-height supprimée pour laisser le flex s'ajuster */
+}
+
+/* ============================================
+   CONTENEUR IMAGES
+   ============================================ */
 .about-images {
     flex: 1;
+    min-width: 300px;
+    max-width: 500px;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    min-width: 300px;
-    max-width: 500px;
+    align-items: stretch; /* Les 2 conteneurs d'images s'étirent en hauteur */
 }
 
-/* =========================
-OFFRE FIDÉLITÉ
-========================= */
-
-.special-offer {
-background: white;
-border-radius: 15px;
-padding: 1.8rem;
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-animation: fadeInLeft 1s ease;
-min-height: 620px;
+.image-container {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* Remplit sans déformation */
+    display: block;
+}
+
+/* ============================================
+   CONTENU DE L'OFFRE (inchangé)
+   ============================================ */
 .offer-header {
-text-align: center;
-margin-bottom: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .offer-badge {
-background: linear-gradient(135deg, #ff9800, #f57c00);
-color: white;
-padding: 0.4rem 1rem;
-border-radius: 25px;
-font-weight: bold;
-font-size: 0.9rem;
-display: inline-block;
-margin-bottom: 0.8rem;
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.8rem;
 }
 
 .offer-header h3 {
-margin: 0;
-color: #2c3e50;
+    margin: 0;
+    color: #2c3e50;
 }
 
 .discount-container {
-text-align: center;
-margin: 1.5rem 0;
+    text-align: center;
+    margin: 1.5rem 0;
 }
 
 .discount-badge {
-background: linear-gradient(135deg, #2ecc71, #27ae60);
-color: white;
-padding: 0.8rem 1.8rem;
-border-radius: 40px;
-font-size: 1.8rem;
-font-weight: bold;
-display: inline-block;
-box-shadow: 0 5px 15px rgba(46, 204, 113, 0.25);
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 40px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.25);
 }
 
 .offer-list {
-list-style: none;
-padding: 0;
-margin: 1.5rem 0;
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
 }
 
 .offer-list li {
-padding: 1rem 0;
-border-bottom: 1px solid #eee;
-text-align: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
 }
 
 .offer-list li:last-child {
-border-bottom: none;
+    border-bottom: none;
 }
 
 .highlight-offer .offer-text {
-font-size: 1.15rem;
-font-weight: 700;
-color: #2c3e50;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #2c3e50;
 }
 
 .offer-text {
-color: #555;
+    color: #555;
 }
 
 .limited-offer {
-text-align: center;
-background: #fff8e1;
-border: 1px solid #ffe082;
-border-radius: 10px;
-padding: 1rem;
-margin: 1.5rem 0;
-color: #e65100;
+    text-align: center;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    color: #e65100;
 }
 
 .group-warning {
-text-align: center;
-font-size: 0.95rem;
-color: #e67e22;
-background-color: #fff3e0;
-padding: 0.8rem;
-border-radius: 8px;
-margin: 1.2rem 0;
+    text-align: center;
+    font-size: 0.95rem;
+    color: #e67e22;
+    background-color: #fff3e0;
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin: 1.2rem 0;
 }
 
 .cta-button {
-display: block;
-background-color: #3498db;
-color: white;
-text-align: center;
-padding: 1rem;
-border-radius: 8px;
-text-decoration: none;
-font-weight: bold;
-transition: all 0.3s ease;
-margin-top: 1.5rem;
+    display: block;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
 }
 
 .cta-button:hover {
-background-color: #2980b9;
-transform: translateY(-3px);
-box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.4);
 }
 
+/* ============================================
+   MODE MOBILE & TABLETTE
+   ============================================ */
+@media (max-width: 768px) {
+    .special-offer-container,
+    .about-images {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .image-container {
+        min-width: 100%; /* Chaque image prend toute la largeur */
+    }
+
+    .image-container img {
+        height: auto;          /* Évite un écrasement vertical */
+        aspect-ratio: 4 / 3;   /* Maintient un ratio harmonieux */
+        object-fit: cover;
+    }
+}
 
 /* Styles pour l'offre spéciale */
 .special-offer {
