@@ -21,14 +21,14 @@
     --color-black: #000000;
 
     /* Espacements */
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
+    --space-xs: 0.2rem;
+    --space-sm: 0.4rem;
     --space-md: 1.5rem;
     --space-lg: 2rem;
     --space-xl: 3rem;
 
     /* Tailles de police */
-    --text-xs: 0.75rem;
+    --text-xs: 0.60rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
     --text-md: 1.25rem;
@@ -146,7 +146,14 @@ img {
 .logo-container:hover {
     transform: scale(1.05);
 }
-
+.logo-container img {
+    display: block;              /* ← pas de margin auto, juste block */
+    width: 200px;                /* ← taille exacte comme dans le HTML */
+    height: auto;                /* ← hauteur automatique pour garder le ratio */
+    margin: 0 auto;              /* ← centrage horizontal */
+    max-width: 100%;             /* ← sécurité pour les petits écrans */
+    object-fit: contain;         /* ← préserve le ratio si jamais le conteneur est plus grand */
+}
 /* Banner */
 .banner {
     border-radius: 20px;
@@ -1783,6 +1790,7 @@ footer::before {
     }
 
     /* 9. Navigation mobile */
+     
     nav ul {
         display: none;
         flex-direction: column;
@@ -1849,7 +1857,7 @@ footer::before {
     }
 
     /* 12. Classes : horaires en pleine largeur */
-    .schedule-item {
+   edule-item {
         flex-direction: row;           /* ← garde la ligne sur tablette */
         justify-content: space-between;
         width: 100%;
@@ -1985,6 +1993,14 @@ footer::before {
     }
 
     /* About */
+    h2{
+        font-size: var(--text-sm);
+        
+    }
+    h3{
+        font-size: var(--text-xs);
+    }
+   
     .about-images {
         flex-direction: column;
     }
@@ -2003,7 +2019,7 @@ footer::before {
         padding: var(--space-xs) var(--space-sm);
         font-size: var(--text-md);
     }
-
+    
     /* Pricing */
     .price {
         font-size: var(--text-lg);
