@@ -353,8 +353,20 @@ section {
 .google-link:hover {
     transform: translateY(-2px);
 }
-
 .reviews-list {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.review-card {
+    flex: 1 1 280px;
+    max-width: 380px;
+    min-width: 0;
+}
+/* .reviews-list {
     display: flex;
     gap: 15px;
     justify-content: center;
@@ -369,7 +381,7 @@ section {
     padding: 18px;
     border-radius: 15px;
     transition: 0.3s;
-}
+} */
 
 .review-card:hover {
     transform: translateY(-4px);
@@ -426,7 +438,7 @@ section {
 }
 
 /* ============================================================
-   SECTION ABOUT - OFFRE + IMAGES (même ligne en desktop)
+   SECTION ABOUT - why + IMAGES (même ligne en desktop)
    ============================================================ */
 
 .about-content-wrapper {
@@ -441,7 +453,7 @@ section {
     gap: 2rem;
     justify-content: center;
     align-items: stretch;
-    max-height: 500px;             /* ← Limite la hauteur pour éviter que les images ne soient trop grandes */          
+   /*  max-height: 500px;             ← Limite la hauteur pour éviter que les images ne soient trop grandes */          
 } 
 /* ==================================================
    POURQUOI ENGLISHJOY
@@ -1683,7 +1695,7 @@ footer::before {
         padding-right: 20px !important;
     }
 
-    /* 2. Toutes les sections prennent 100% et n'ont pas de marge interne */
+    /* 2. Toutes les sections avec une marge basse pour les espacer */
     .about-section,
     .classes-section,
     .pricing-section,
@@ -1696,12 +1708,13 @@ footer::before {
         padding-right: 0 !important;
         margin-left: 0 !important;
         margin-right: 0 !important;
+        margin-bottom: 40px !important;   /* ← ESPACE ENTRE CHAQUE SECTION */
         width: 100% !important;
         max-width: 100% !important;
         border-radius: 16px !important;
     }
 
-    /* 3. Conteneurs internes s'alignent */
+    /* 3. Conteneurs internes pleine largeur */
     .about-content-wrapper,
     .about-content,
     .classes-container,
@@ -1718,31 +1731,8 @@ footer::before {
         max-width: 100% !important;
         border-radius: 16px !important;
     }
-     .about-content{
-        flex-direction:column;
-    }
 
-    .why-englishjoy-container,
-    .about-images{
-        max-width:100%;
-    }
-
-    .why-englishjoy-box{
-        padding:2rem;
-    }
-
-    .why-englishjoy-box h3{
-        font-size:1.7rem;
-    }
-
-    .why-list li{
-        font-size:1rem;
-    }
-
-    .promo-badge{
-        font-size:1.5rem;
-    }
-    /* 4. Boîtes avec fond blanc : on garde un peu d'air intérieur */
+    /* 4. Boîtes avec fond blanc : on garde un padding intérieur */
     .special-offer,
     .reviews-box,
     .google-review-card,
@@ -1751,18 +1741,50 @@ footer::before {
         border-radius: 16px !important;
     }
 
-    /* 5. Ajustement du footer */
-    footer {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-    }
-    .footer-content {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
+    /* 5. Espacement des avis (reviews-box) */
+  
+
+      .reviews-box {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
-    /* 6. Images dans about : empilées verticalement */
-    .about-images {
+    .reviews-list {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 20px !important;
+    }
+
+    .review-card {
+        flex: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        display: block !important;
+    }
+    .review-text {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+
+
+    /* 6. Espacement des avis Google */
+    .google-reviews-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;          /* ← espace entre les cartes */
+    }
+
+ .about-content {
+        flex-direction: column !important;   /* ← empile les éléments */
+        flex-wrap: nowrap !important;        /* ← évite le wrap inutile */
+        align-items: center !important;
+        gap: 2rem !important;
+    }
+     .about-images {
         flex-direction: column !important;
         gap: 1rem;
     }
@@ -1774,26 +1796,39 @@ footer::before {
         height: auto !important;
         aspect-ratio: 4/3;
         object-fit: cover;
-    }
+    } 
 
-    /* 7. Galerie : une colonne */
+    /* 8. Galerie : une colonne */
     .gallery-container {
         grid-template-columns: 1fr !important;
-        gap: 15px;
+        gap: 20px;
     }
     .photo-card {
         max-width: 100% !important;
         height: 200px;
     }
 
-    /* 8. Avis Google : une colonne */
-    .google-reviews-grid {
+    /* 9. Classes : une colonne */
+    .classes-container {
         grid-template-columns: 1fr !important;
-        gap: 15px;
+        gap: 25px;
     }
 
-    /* 9. Navigation mobile */
-     
+    /* 10. Horaires en pleine largeur */
+    .schedule-item {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    .schedule-item .age,
+    .schedule-item .time {
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    /* 11. Navigation mobile */
     nav ul {
         display: none;
         flex-direction: column;
@@ -1814,16 +1849,16 @@ footer::before {
         display: block;
     }
 
-    /* 10. Banner (mobile) */
+    /* 12. Banner */
     .banner {
-    width: 100vw;
-    max-width: none;
-    margin: 0;
-    border-radius: 0;
-    min-height: 260px;
-    height: auto;
-    padding: 25px 15px;
-}
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        border-radius: 0;
+        min-height: 260px;
+        height: auto;
+        padding: 25px 15px;
+    }
     .banner h1 {
         font-size: 1.4rem;
         line-height: 1.3;
@@ -1835,7 +1870,7 @@ footer::before {
         padding: 0 15px;
     }
 
-    /* 11. About (titres, padding) */
+    /* 13. About header */
     .about-section {
         padding: 0 !important;
     }
@@ -1855,46 +1890,16 @@ footer::before {
         padding: var(--space-sm);
         white-space: normal;
     }
-    .reviews-list {
-        flex-direction: column;
-    }
-    .review-card {
-        max-width: 100%;
-    }
 
-    /* 12. Classes : horaires en pleine largeur */
-  .schedule-item {
-        flex-direction: row;           /* ← garde la ligne sur tablette */
-        justify-content: space-between;
-        width: 100%;
-        flex-wrap: wrap;               /* ← autorise le retour à la ligne si nécessaire */
-        gap: 4px;
-    }
-    .schedule-item .age,
-    .schedule-item .time {
-        white-space: normal;           /* ← le texte peut passer à la ligne */
-        word-break: break-word;
-    }
-
-    /* 13. Pricing */
+    /* 14. Pricing */
     .pricing-grid {
         grid-template-columns: 1fr;
     }
     .pricing-card {
         padding: var(--space-md);
     }
-    .pricing-card.featured .price {
-        display: inline-flex;
-        align-items: center;
-        gap: var(--space-xs);
-    }
-    .pricing-card.featured .star-icon {
-        position: static;
-        transform: none;
-        margin-left: var(--space-xs);
-    }
 
-    /* 14. Courses */
+    /* 15. Courses */
     .courses-container {
         flex-direction: column;
     }
@@ -1904,11 +1909,8 @@ footer::before {
     .skills-list {
         grid-template-columns: 1fr;
     }
-     .classes-container {
-        grid-template-columns: 1fr !important;   /* ← 1 carte par ligne en mobile */
-        gap: 20px;
-    }
-    /* 15. Enseignant */
+
+    /* 16. Enseignant */
     .teacher-container {
         flex-direction: column;
         text-align: center;
@@ -1929,7 +1931,7 @@ footer::before {
         padding-left: var(--space-sm);
     }
 
-    /* 16. Colo (ajustements) */
+    /* 17. Colo */
     .colo-card-pro {
         width: 100% !important;
         padding: 20px !important;
@@ -1939,7 +1941,7 @@ footer::before {
         height: 180px;
     }
 
-    /* 17. Google reviews (titres) */
+    /* 18. Google reviews */
     .google-reviews-header h2 {
         font-size: 2rem;
     }
@@ -1962,83 +1964,50 @@ footer::before {
         width: 100% !important;
     }
 
-  /* =========================
-   TITRES
-========================= */
+    /* 19. Footer */
+    footer {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .footer-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
 
-.about-header h1{
-    font-size: 1.8rem;
+    /* 20. Ajustements de police globaux */
+    .about-header h1 { font-size: 1.8rem; }
+    .about-header h2 { font-size: 1.9rem; }
+    .about-header h3 { font-size: 1.25rem; }
+    .classes-section h2,
+    .pricing-section h2,
+    .courses-content h2,
+    .teacher-bio h2,
+    .google-reviews-header h2,
+    .section-title,
+    .colo-title { font-size: 2rem; }
+
+    .about-section p,
+    .courses-description p,
+    .teacher-desc p,
+    .google-review-card p,
+    .section-description,
+    .colo-text,
+    .colo-info { font-size: 0.95rem; }
+
+    .classes-subtitle,
+    .price-subtitle { font-size: 0.95rem; }
+
+    .class-header h3 { font-size: 1.5rem; }
+    .review-author h4 { font-size: 1.15rem; }
+    .offer-block h4 { font-size: 1.1rem; }
+    .price__1 { font-size: 1.5rem; }
+    .price { font-size: 1.3rem; }
 }
 
-.about-header h2{
-    font-size: 1.9rem;
-}
-
-.about-header h3{
-    font-size: 1.25rem;
-}
-
-.classes-section h2,
-.pricing-section h2,
-.courses-content h2,
-.teacher-bio h2,
-.google-reviews-header h2,
-.section-title,
-.colo-title{
-    font-size: 2rem;
-}
-
-/* =========================
-   TEXTES
-========================= */
-
-.about-section p,
-.courses-description p,
-.teacher-desc p,
-.google-review-card p,
-.section-description,
-.colo-text,
-.colo-info{
-    font-size: 0.95rem;
-}
-
-.classes-subtitle,
-.price-subtitle{
-    font-size: 0.95rem;
-}
-
-/* =========================
-   CARTES
-========================= */
-
-.class-header h3{
-    font-size: 1.5rem;
-}
-
-.review-author h4{
-    font-size: 1.15rem;
-}
-
-.offer-block h4{
-    font-size: 1.1rem;
-}
-
-.price__1{
-    font-size: 1.5rem;
-}
-
-.price{
-    font-size: 1.3rem;
-}
-
-}
-    
 /* ----- Très petits écrans (<= 576px) ----- */
 @media (max-width: 576px) {
-
-    /* Classes : passage en colonne pour plus d'espace */
     .schedule-item {
-        flex-direction: column;        
+        flex-direction: column;
         text-align: center;
         gap: 2px;
         padding: 10px 8px;
@@ -2049,29 +2018,31 @@ footer::before {
         width: 100%;
         text-align: center;
     }
+    /* Encore plus d'espace entre les avis */
+    .reviews-list {
+        gap: 35px !important;
+    }
+    .google-reviews-grid {
+        gap: 40px !important;
+    }
 }
-
 
 /* ----- Très petits écrans (<= 480px) ----- */
 @media (max-width: 480px) {
-
-    /* Banner */
     .banner {
-    width: 100vw;
-    max-width: none;
-    margin: 0;
-    border-radius: 0;
-    height: 220px;
-    padding: 15px;
-}
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        border-radius: 0;
+        height: 220px;
+        padding: 15px;
+    }
     .banner h1 {
         font-size: 1.4rem;
     }
     .banner p {
         font-size: 0.9rem;
     }
-
-    /* About */
 
     .about-images {
         flex-direction: column;
@@ -2091,13 +2062,11 @@ footer::before {
         padding: var(--space-xs) var(--space-sm);
         font-size: var(--text-md);
     }
-    
-    /* Pricing */
+
     .price {
         font-size: var(--text-lg);
     }
 
-    /* Gallery */
     .section-title {
         font-size: 1.8rem;
     }
@@ -2105,7 +2074,6 @@ footer::before {
         padding: 10px 25px;
     }
 
-    /* Footer */
     .footer-links {
         flex-direction: column;
         gap: var(--space-sm);
@@ -2116,94 +2084,39 @@ footer::before {
         gap: var(--space-sm);
     }
 
-    /* Corrections diverses */
     #titre {
         margin-top: 30px;
     }
-    /* =========================
-   TITRES MOBILE
-========================= */
 
-.about-header h1{
-    font-size: 1.5rem;
-}
+    /* Ajustements police mobile très petit */
+    .about-header h1 { font-size: 1.5rem; }
+    .about-header h2 { font-size: 1.6rem; }
+    .about-header h3 { font-size: 1.05rem; }
+    .classes-section h2,
+    .pricing-section h2,
+    .courses-content h2,
+    .teacher-bio h2,
+    .google-reviews-header h2,
+    .section-title,
+    .colo-title { font-size: 1.6rem; }
+    .class-header h3 { font-size: 1.3rem; }
 
-.about-header h2{
-    font-size: 1.6rem;
-}
+    .about-section p,
+    .courses-description p,
+    .teacher-desc p,
+    .google-review-card p,
+    .section-description,
+    .colo-text,
+    .colo-info,
+    .offer-text,
+    .price-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
 
-.about-header h3{
-    font-size: 1.05rem;
-}
-
-.classes-section h2,
-.pricing-section h2,
-.courses-content h2,
-.teacher-bio h2,
-.google-reviews-header h2,
-.section-title,
-.colo-title{
-    font-size: 1.6rem;
-}
-
-.class-header h3{
-    font-size: 1.3rem;
-}
-
-/* =========================
-   PARAGRAPHES
-========================= */
-
-.about-section p,
-.courses-description p,
-.teacher-desc p,
-.google-review-card p,
-.section-description,
-.colo-text,
-.colo-info,
-.offer-text,
-.price-subtitle{
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
-/* =========================
-   TARIFS
-========================= */
-
-.offer-block h4{
-    font-size: 1rem;
-}
-
-.price__1{
-    font-size: 1.3rem;
-}
-
-.price{
-    font-size: 1.15rem;
-}
-
-/* =========================
-   AVIS GOOGLE
-========================= */
-
-.review-author h4{
-    font-size: 1rem;
-}
-
-.google-rating{
-    font-size: 1.1rem;
-}
-
-/* =========================
-   POURQUOI ENGLISHJOY
-========================= */
-
-.why-englishjoy-box h3{
-    font-size: 1.4rem;
-}
-
-.why-list li{
-    font-size: 0.9rem;
-}
+    .offer-block h4 { font-size: 1rem; }
+    .price__1 { font-size: 1.3rem; }
+    .price { font-size: 1.15rem; }
+    .review-author h4 { font-size: 1rem; }
+    .google-rating { font-size: 1.1rem; }
 }
