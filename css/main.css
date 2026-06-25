@@ -157,7 +157,7 @@ img {
 /* Banner */
 .banner {
     border-radius: 20px;
-    /* margin: 20px auto; */
+    margin: 20px auto;
     max-width: 97%;
     height: 300px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -441,7 +441,8 @@ section {
     gap: 2rem;
     justify-content: center;
     align-items: stretch;
-}
+    max-height: 500px;             /* ← Limite la hauteur pour éviter que les images ne soient trop grandes */          
+} 
 /* ==================================================
    POURQUOI ENGLISHJOY
 ================================================== */
@@ -1741,7 +1742,6 @@ footer::before {
     .promo-badge{
         font-size:1.5rem;
     }
-}
     /* 4. Boîtes avec fond blanc : on garde un peu d'air intérieur */
     .special-offer,
     .reviews-box,
@@ -2031,6 +2031,8 @@ footer::before {
     font-size: 1.3rem;
 }
 
+}
+    
 /* ----- Très petits écrans (<= 576px) ----- */
 @media (max-width: 576px) {
 
