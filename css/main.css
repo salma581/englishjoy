@@ -445,6 +445,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    
 }
 
 .about-content {
@@ -452,8 +453,8 @@ section {
     flex-wrap: nowrap;          /* ← Force les éléments à rester sur la même ligne */
     gap: 2rem;
     justify-content: center;
-    align-items: stretch;
-   /*  max-height: 500px;             ← Limite la hauteur pour éviter que les images ne soient trop grandes */          
+    align-items: stretch; 
+    height: 500px;        
 } 
 /* ==================================================
    POURQUOI ENGLISHJOY
@@ -461,8 +462,8 @@ section {
 
 .why-englishjoy-container{
     flex:1;
-    min-width:300px;
-    max-width:500px;
+   /*  min-width:300px;
+    max-width:500px; */
     display:flex;
 }
 
@@ -518,13 +519,13 @@ section {
     display: flex;
     flex-direction: column;      
     gap: 1rem;
-    min-width: 300px;
-    max-width: 500px;
+    /* min-width: 300px;
+    max-width: 500px; */
 }
 
 .image-container {
     flex: 1;
-    border-radius: 12px;
+    border-radius: 18px;
     overflow: hidden;
     min-height: 180px;
 }
@@ -534,7 +535,7 @@ section {
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: 12px;
+    border-radius: 18px;
 }
 /* ----- Boîte des avantages (benefits-box) ----- */
 .benefits-box {
@@ -582,6 +583,7 @@ section {
     padding: 90px 20px;
     background: white;
     border-radius: 18px;
+        margin-top: 30px;
 }
 
 .classes-section h2 {
@@ -845,20 +847,14 @@ section {
 }
 
 .promo-badge{
-
-    display:inline-block;
-
-    background:#FFD700;
-    color:#333;
-
-    font-size:1.8rem;
-    font-weight:800;
-
-    padding:10px 25px;
-
-    border-radius:50px;
-
-    margin-bottom:12px;
+    display: inline-block;
+    background: #FFD700;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 12px;
 }
 
 .promo-block p{
@@ -1687,7 +1683,7 @@ footer::before {
    ============================================================ */
 
 /* ----- Petit écran (tablette et mobile) ----- */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     /* 1. Marge extérieure commune pour tout le contenu */
     main {
@@ -1778,11 +1774,12 @@ footer::before {
         gap: 35px !important;          /* ← espace entre les cartes */
     }
 
- .about-content {
-        flex-direction: column !important;   /* ← empile les éléments */
-        flex-wrap: nowrap !important;        /* ← évite le wrap inutile */
+    .about-content {
+        flex-direction: column !important;   
+        flex-wrap: nowrap !important;        
         align-items: center !important;
         gap: 2rem !important;
+        height: auto !important;
     }
      .about-images {
         flex-direction: column !important;
@@ -1909,7 +1906,11 @@ footer::before {
     .skills-list {
         grid-template-columns: 1fr;
     }
-
+    .promo-badge{
+        padding: 9px 14px;
+        font-weight: 700;
+        font-size: 1.1rem;
+    }
     /* 16. Enseignant */
     .teacher-container {
         flex-direction: column;
@@ -1988,11 +1989,12 @@ footer::before {
 
     .about-section p,
     .courses-description p,
+    .promo-block p,
     .teacher-desc p,
     .google-review-card p,
     .section-description,
     .colo-text,
-    .colo-info { font-size: 0.95rem; }
+    .colo-info { font-size: 1rem; }
 
     .classes-subtitle,
     .price-subtitle { font-size: 0.95rem; }
@@ -2110,7 +2112,7 @@ footer::before {
     .colo-info,
     .offer-text,
     .price-subtitle {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         line-height: 1.6;
     }
 
