@@ -1683,6 +1683,11 @@ footer::before {
    ============================================================ */
 
 /* ----- Petit écran (tablette et mobile) ----- */
+@media (max-width: 1100px){
+.courses-container {
+    flex-direction: column;
+    gap: 30px;}
+}
 @media (max-width: 1000px) {
 
     /* 1. Marge extérieure commune pour tout le contenu */
