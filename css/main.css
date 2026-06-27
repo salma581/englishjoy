@@ -784,6 +784,9 @@ section {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
 }
 
 .price {
@@ -832,6 +835,9 @@ section {
 ================================================== */
 
 .promo-block{
+    /* display: flex;
+    
+    justify-items: center; */
     margin:1.2rem 0;
     padding:1.5rem;
     border-radius:16px;
@@ -865,13 +871,25 @@ section {
     justify-content: center;
     align-items: center;
 
-    background: #FFD700;
-    color: #333;
+    background: rgb(232, 63, 63);
+    color: white;
     font-size: 1.2rem;
     font-weight: 800;
     padding: 6px 16px;
     border-radius: 50px;
+
+    animation: float 3s ease-in-out infinite;
 }
+
+
+@keyframes float {
+    0%   { transform: translateY(0px) translateX(0px); }
+    25%  { transform: translateY(-3px) translateX(2px); }
+    50%  { transform: translateY(0px) translateX(-2px); }
+    75%  { transform: translateY(3px) translateX(1px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
 .promo-block p{
     margin:0;
     color:#444;
@@ -2199,12 +2217,12 @@ footer::before {
     .colo-text,
     .colo-info,
     .offer-text{
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         line-height: 1.6;
     }
 
     .offer-block h4 { font-size: 1rem; }
-  .price__1 { font-size: 1.4rem !important;} 
+  .price__1 { font-size: 1.1rem !important;} 
     .price { font-size: 1.3rem!important; } 
     .review-author h4 { font-size: 1rem; }
     .google-rating { font-size: 1.1rem; }
