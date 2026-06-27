@@ -851,20 +851,40 @@ section {
     display: inline-block;
     background: #FFD700;
     color: #333;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 800;
     padding: 6px 16px;
     border-radius: 50px;
     margin-bottom: 12px;
 }
+.offre-promo{
+    width: 50%;
+    margin: 0 auto 12px;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #FFD700;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 50px;
+}
 .promo-block p{
     margin:0;
-    font-weight:600;
     color:#444;
     line-height:1.6;
 }
-
+.offre-p1{
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.offre-p{
+    font-size: 0.7rem;
+    font-weight: 500;
+}
 /* ============================================================
    SECTION COURSES (#courses-section)
    ============================================================ */
@@ -1872,7 +1892,39 @@ footer::before {
     .banner-content {
         padding: 0 15px;
     }
+    .read-more-btn{
+    font-size: 1.1rem;
+    font-weight:700;
+  }
+ /* why englishjoy */
+ .why-englishjoy-container{
+    width:100%;
+    max-width:100% !important;
+ }
 
+  .why-englishjoy-box{
+    width:100%;
+  }
+  .why-englishjoy-container{
+    width:100%;
+    max-width:100% !important;
+  }
+
+  .why-englishjoy-box{
+    width:100%;
+  }
+  .why-englishjoy-container{
+    width:100%;
+    max-width:100% !important;
+  }
+
+  .why-englishjoy-box{
+    width:100%;
+  }
+  /* .why-list li {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  } */
     /* 13. About header */
     .about-section {
         padding: 0 !important;
@@ -1913,7 +1965,7 @@ footer::before {
         grid-template-columns: 1fr;
     }
     .promo-badge{
-        padding: 9px 14px;
+        padding: 10px 16px;
         font-weight: 700;
         font-size: 1.1rem;
     }
@@ -1948,9 +2000,9 @@ footer::before {
         height: 180px;
     }
 
-    /* 18. Google reviews */
+    /* 18. Google reviews */ 
     .google-reviews-header h2 {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .google-rating {
         font-size: 1.4rem;
@@ -1991,25 +2043,34 @@ footer::before {
     .teacher-bio h2,
     .google-reviews-header h2,
     .section-title,
+    
     .colo-title { font-size: 2rem; }
+    .about-section p  { font-size: 1.1rem; }
 
-    .about-section p,
-    .courses-description p,
-    .promo-block p,
+     .why-list li,
+    .pricing-features li,
+    .benefits-list li { font-size: 1.3rem; }
+    .promo-block p { font-size: 1rem; }
+     .offre-p { font-size: 0.8rem; }
+
     .teacher-desc p,
+    .courses-description p,
     .google-review-card p,
     .section-description,
+    .offer-block p,
     .colo-text,
-    .colo-info { font-size: 1rem; }
+    .colo-info {
+    font-size: 1.4rem;
+    line-height: 1.7;
+}
 
-    .classes-subtitle,
+   .classes-subtitle,
     .price-subtitle { font-size: 0.95rem; }
-
     .class-header h3 { font-size: 1.5rem; }
     .review-author h4 { font-size: 1.15rem; }
-    .offer-block h4 { font-size: 1.1rem; }
-    .price__1 { font-size: 1.5rem; }
-    .price { font-size: 1.3rem; }
+    .offer-block h4 { font-size: 1.6rem; }
+   .price__1 { font-size: 1.8rem !important;} 
+    .price { font-size: 1.5rem!important; } 
 }
 
 /* ----- Très petits écrans (<= 576px) ----- */
@@ -2051,7 +2112,19 @@ footer::before {
     .banner p {
         font-size: 0.9rem;
     }
+    .review-text{
+    font-size:0.92rem;
+    line-height:1.7;
+  }
 
+    .reviews-header p{
+    font-size:1rem;
+    }
+    .read-more-btn{
+    font-size:0.90rem;
+    font-weight:600;
+    padding-top:10px;
+}
     .about-images {
         flex-direction: column;
     }
@@ -2070,7 +2143,8 @@ footer::before {
         padding: var(--space-xs) var(--space-sm);
         font-size: var(--text-md);
     }
-
+     .profile-image {
+        max-width: 300px;
     .price {
         font-size: var(--text-lg);
     }
@@ -2095,11 +2169,11 @@ footer::before {
     #titre {
         margin-top: 30px;
     }
-
+}
     /* Ajustements police mobile très petit */
-    .about-header h1 { font-size: 1.5rem; }
+     .about-header h1 { font-size: 1.5rem; }
     .about-header h2 { font-size: 1.6rem; }
-    .about-header h3 { font-size: 1.05rem; }
+    .about-header h3 { font-size: 1rem; }
     .classes-section h2,
     .pricing-section h2,
     .courses-content h2,
@@ -2108,23 +2182,30 @@ footer::before {
     .section-title,
     .colo-title { font-size: 1.6rem; }
     .class-header h3 { font-size: 1.3rem; }
+    .why-englishjoy-box h3 { font-size: 1.6rem; }
+    .price-subtitle { font-size: 1.05rem !important; }
 
-    .about-section p,
+    .why-list li,
+    .pricing-features li,
+    .benefits-list li { font-size: 1.1rem; }
+
+    .about-section p { font-size: 1rem; }
+    .offre-p { font-size: 0.6rem; }
+    .why-list li,
     .courses-description p,
     .teacher-desc p,
     .google-review-card p,
     .section-description,
     .colo-text,
     .colo-info,
-    .offer-text,
-    .price-subtitle {
-        font-size: 0.8rem;
+    .offer-text{
+        font-size: 1.1rem;
         line-height: 1.6;
     }
 
     .offer-block h4 { font-size: 1rem; }
-    .price__1 { font-size: 1.3rem; }
-    .price { font-size: 1.15rem; }
+  .price__1 { font-size: 1.4rem !important;} 
+    .price { font-size: 1.3rem!important; } 
     .review-author h4 { font-size: 1rem; }
     .google-rating { font-size: 1.1rem; }
-}
+     }
