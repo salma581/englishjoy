@@ -139,5 +139,16 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
             : 'Lire la suite';
 
     });
-
+const pricingCard = document.querySelector('.pricing-card');
+if (pricingCard) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        pricingCard.classList.add('visible');
+        observer.unobserve(pricingCard);
+      }
+    });
+  }, { threshold: 0.15 });
+  observer.observe(pricingCard);
+}
 });
