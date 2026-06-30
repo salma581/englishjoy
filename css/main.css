@@ -342,6 +342,63 @@ section {
     100% { transform: translateY(0px) translateX(0px); }
 }
 
+/* Lieu des cours */
+.location-container {
+    max-width: 800px;
+    margin: 18px auto 0;
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+
+    background: #fff;
+    /* border: 2px solid #3498db; */
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.12);
+
+    text-align: left;
+    animation: fadeInUp 0.8s ease;
+}
+
+.location-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.location-content strong:first-child {
+    display: block;
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.location-content p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.location-content strong:not(:first-child) {
+    color: #3498db;
+}
+
+.separator {
+    display: inline-block;
+    margin: 0 6px;
+    font-weight: 700;
+    color: #e74c3c;
+    text-transform: uppercase;
+}
+
+.location-content em {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.92rem;
+    color: #777;
+    font-style: italic;
+}
 /* ----- Avis (reviews-box) intégré dans about ----- */
 .reviews-box {
     max-width: 900px;
@@ -2220,6 +2277,9 @@ footer::before {
     }
     .banner p {
         font-size: 0.9rem;
+    }
+    .location-icon{
+        font-size: 1.2rem;
     }
     .review-text{
     font-size:0.92rem;
