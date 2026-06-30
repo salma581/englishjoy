@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Validation
         if (checkbox.required) {
           checkbox.addEventListener('invalid', () => {
-            customCheckbox.style.animation = 'shake 0.3s';
+            customCheckbox.style.animation = 'shake 0.6s';
             setTimeout(() => customCheckbox.style.animation = '', 300);
           });
         }
