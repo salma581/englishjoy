@@ -367,8 +367,8 @@ section {
 }
 
 .location-content strong:first-child {
-    display: block;
-    color: #2c3e50;
+    /* display: block; */
+    color: #3498db;
     font-size: 1.1rem;
     margin-bottom: 8px;
 }
@@ -2165,7 +2165,7 @@ footer::before {
     .media-card video {
         height: 180px;
     }
-
+     
     /* 18. Google reviews */ 
     .google-reviews-header h2 {
         font-size: 1.5rem;
@@ -2260,6 +2260,27 @@ footer::before {
     .google-reviews-grid {
         gap: 40px !important;
     }
+    .colo-info {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .horaire-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        line-height: 1.6;
+    }
+
+    .horaire-text strong {
+        display: block;
+    }
+
+    .horaire-text .ou {
+        display: block;
+        font-weight: 600;
+        color: #666;
+    }
 }
 
 /* ----- Très petits écrans (<= 480px) ----- */
@@ -2317,7 +2338,7 @@ footer::before {
     .price {
         font-size: var(--text-lg);
     }
-
+    
     .section-title {
         font-size: 1.8rem;
     }
@@ -2358,6 +2379,7 @@ footer::before {
     .pricing-features li,
     .benefits-list li { font-size: 1.1rem; }
 
+    .offer-block p {font-size: 1.1rem !important;} 
     .about-section p { font-size: 1rem; }
     .offre-p { font-size: 0.6rem; }
     .why-list li,
@@ -2373,12 +2395,13 @@ footer::before {
     }
 
     .offer-block h4 { font-size: 1rem; }
-  .price__1 { font-size: 1.1rem !important;} 
+  .price__1 { font-size: 1.3rem !important;} 
     .price { font-size: 1.3rem!important; } 
     .review-author h4 { font-size: 1rem; }
     .google-rating { font-size: 1.1rem; }
-     }
-     @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
   .pricing-section {
     padding: var(--space-lg) var(--space-sm);
   }
@@ -2426,13 +2449,23 @@ footer::before {
   .pricing-card h3 {
     font-size: 1.2rem;
   }
-  .price__1 {
+  /* .price__1 {
     font-size: 1.4rem;
-  }
+  } */
   .offers-grid .offer-block h4 {
     font-size: 1.1rem;
   }
   .family-text .price {
     font-size: 1.1rem;
   }
+   .colo-info {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        padding: 0 10px;
+    }
+
+    .colo-info strong {
+        display: block;
+        margin-top: 4px;
+    }
 }
