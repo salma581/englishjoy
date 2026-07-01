@@ -1,0 +1,34 @@
+[33m546389a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m HEAD@{0}: commit: faute de frape
+[33mafd372f[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{1}: commit: colo date
+[33m8e08a1f[m HEAD@{2}: commit: inscription banner
+[33m64692af[m HEAD@{3}: commit: date et lieux
+[33m6c804f6[m HEAD@{4}: commit: price
+[33m38e8bc2[m HEAD@{5}: commit: price
+[33m329611c[m HEAD@{6}: commit: size
+[33m52fbd46[m HEAD@{7}: commit: offre
+[33mb8d6073[m HEAD@{8}: commit: navigation
+[33m73612da[m HEAD@{9}: commit: 30 euro
+[33m4c54ecc[m HEAD@{10}: commit: apropos image
+[33m7387503[m HEAD@{11}: commit: retouche
+[33mc1cfe39[m HEAD@{12}: commit: height
+[33m7c50054[m HEAD@{13}: commit: margin
+[33m280dd44[m HEAD@{14}: commit: banner
+[33m2c63e00[m HEAD@{15}: commit: police titre
+[33me71b267[m HEAD@{16}: commit: marge modification
+[33mf974b76[m HEAD@{17}: commit: banner change
+[33m100280d[m HEAD@{18}: commit: aligner offre avec images
+[33m249c9da[m HEAD@{19}: commit: modif section width
+[33m0e225ca[m HEAD@{20}: commit: midification des groupe
+[33mc721b7b[m HEAD@{21}: commit: amélioré h1 mobile
+[33mf622786[m HEAD@{22}: commit: banner amélioré
+[33me8fb555[m HEAD@{23}: commit: avis amélioré
+[33mf241421[m HEAD@{24}: commit: section avis
+[33mfee3965[m HEAD@{25}: commit: modification et creation
+[33ma1dd0b6[m HEAD@{26}: commit: changement photo
+[33m62f5bba[m HEAD@{27}: commit: lien colo
+[33m16d5212[m HEAD@{28}: commit: supp bloc
+[33m02345da[m HEAD@{29}: commit (merge): fix merge conflict
+[33md061ca2[m HEAD@{30}: Branch: renamed refs/heads/main to refs/heads/main
+[33md061ca2[m HEAD@{32}: commit: supp
+[33m822fcb3[m HEAD@{33}: Branch: renamed refs/heads/master to refs/heads/main
+[33m822fcb3[m HEAD@{35}: commit (initial): sup
